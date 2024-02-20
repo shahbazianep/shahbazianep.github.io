@@ -1,5 +1,8 @@
 import { timelineData } from "@/assets/data";
 import styles from "@/app/app.module.css";
+import { useContext, useEffect } from "react";
+import { DarkModeContext } from "@/contexts/DarkModeContext";
+import anime from "animejs";
 
 type TimelineData = {
     company: string;
@@ -23,11 +26,68 @@ function convertDate(startDate: Date, endDate: Date) {
         endDate.getFullYear();
     return tempDate;
 }
+// const fadeCircles = anime({
+//     targets: "#circle",
+//     backgroundColor: [
+//         { value: "#9077e1", duration: 2000 },
+//         { value: "#fff", duration: 4000 },
+//     ],
+//     loop: true,
+//     delay: anime.stagger(3200),
+//     easing: "easeInOutExpo",
+// });
+// const fadeDates = anime({
+//     targets: "#date",
+//     opacity: [
+//         { value: 1, duration: 2000 },
+//         { value: 0, duration: 4000 },
+//     ],
+//     loop: true,
+//     delay: anime.stagger(3200),
+//     easing: "easeInOutExpo",
+// });
 
 function TimelineComponent({ data }: { data: TimelineData }) {
+    useEffect(() => {
+        const fadeCircles = anime({
+            targets: "#circle",
+            backgroundColor: [
+                { value: "#9077e1", duration: 2000 },
+                { value: "#fff", duration: 4000 },
+            ],
+            loop: true,
+            delay: anime.stagger(3200),
+            easing: "easeInOutExpo",
+            autoplay: true,
+        });
+        const fadeDates = anime({
+            targets: "#date",
+            opacity: [
+                { value: 1, duration: 2000 },
+                { value: 0, duration: 4000 },
+            ],
+            loop: true,
+            delay: anime.stagger(3200),
+            easing: "easeInOutExpo",
+            autoplay: true,
+        });
+    }, []);
+
     return (
         <div className={styles.timelineElement}>
-            <div className={styles.elementContainer}>
+            <div
+                className={styles.elementContainer}
+                // onMouseEnter={() => {
+                //     // fadeCircles.restart();
+                //     // fadeDates.restart();
+                //     fadeCircles.pause();
+                //     fadeDates.pause();
+                // }}
+                // onMouseLeave={() => {
+                //     fadeCircles.play();
+                //     fadeDates.play();
+                // }}
+            >
                 <div style={{ fontFamily: "WorkSans-SemiBold" }}>
                     {data.company}
                     {data.subcompany ? " | " + data.subcompany : ""}
@@ -41,10 +101,10 @@ function TimelineComponent({ data }: { data: TimelineData }) {
                     {data.role}
                 </div>
                 {/* <div style={{ fontSize: 16 }}>{data.description}</div> */}
-                <div className={styles.date}>
+                <div className={styles.date} id="date">
                     {convertDate(data.startDate, data.endDate)}
                 </div>
-                <span className={styles.circle} />
+                <span className={styles.circle} id="circle" />
             </div>
         </div>
     );

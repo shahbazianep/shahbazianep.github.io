@@ -53,8 +53,14 @@ export default function Page() {
                         </Link>
                     </div>
                 </FadeInElement>
-                <FadeInElement width={"50%"}>
-                    <div style={{ display: "flex", flexDirection: "row" }}>
+                <FadeInElement width={"25%"}>
+                    <div
+                        style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            height: "100%",
+                        }}
+                    >
                         <div className={styles.typography_tile}>
                             <div style={{ fontFamily: "Optician-Sans" }}>
                                 Optician Sans
@@ -63,6 +69,28 @@ export default function Page() {
                                 TenorSans Regular
                             </div>
                         </div>
+                        <div className={styles.project_details_tile}>
+                            <div>Results</div>
+                            <div className={styles.list}>
+                                {[
+                                    "95% faster search times",
+                                    "Added enhanced filters that allow for greater specificity and more filter options",
+                                    "Designed and implemented a smooth, simple UI that mimics the Spotify user experience",
+                                ].map((goal, index) => {
+                                    return <div>{index + 1 + ". " + goal}</div>;
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                </FadeInElement>
+                <FadeInElement width={"25%"}>
+                    <div
+                        style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            height: "100%",
+                        }}
+                    >
                         <div className={styles.color_block_tile}>
                             <ColorBlock
                                 colors={[
@@ -81,43 +109,13 @@ export default function Page() {
                                 ]}
                             />
                         </div>
-                    </div>
-                    <div style={{ display: "flex", flexDirection: "row" }}>
                         <div className={styles.project_goals_tile}>
                             <div>Goals</div>
-                            <div
-                                style={{
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    fontSize: 16,
-                                    marginTop: 16,
-                                    gap: 10,
-                                }}
-                            >
+                            <div className={styles.list}>
                                 {[
                                     "Provide private journaling and mood tracking capabilities",
                                     "Improve general emotional conditions by enabling the principle of emotional contagion",
                                     "Allow for anonymized social interaction via clusters",
-                                ].map((goal, index) => {
-                                    return <div>{index + 1 + ". " + goal}</div>;
-                                })}
-                            </div>
-                        </div>
-                        <div className={styles.project_details_tile}>
-                            <div>Results</div>
-                            <div
-                                style={{
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    fontSize: 16,
-                                    marginTop: 16,
-                                    gap: 10,
-                                }}
-                            >
-                                {[
-                                    "95% faster search times",
-                                    "Added enhanced filters that allow for greater specificity and more filter options",
-                                    "Designed and implemented a smooth, simple UI that mimics the Spotify user experience",
                                 ].map((goal, index) => {
                                     return <div>{index + 1 + ". " + goal}</div>;
                                 })}

@@ -54,8 +54,14 @@ export default function Page() {
                         </Link>
                     </div>
                 </FadeInElement>
-                <FadeInElement width={"50%"}>
-                    <div style={{ display: "flex", flexDirection: "row" }}>
+                <FadeInElement width={"25%"}>
+                    <div
+                        style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            height: "100%",
+                        }}
+                    >
                         <div className={styles.typography_tile}>
                             <div style={{ fontFamily: "Raleway-Bold" }}>
                                 Raleway Bold
@@ -73,6 +79,28 @@ export default function Page() {
                                 SourceSerif4 Medium
                             </div>
                         </div>
+                        <div className={styles.project_goals_tile}>
+                            <div>Goals</div>
+                            <div className={styles.list}>
+                                {[
+                                    "Reduce time spent finding concerts and events",
+                                    "Provide improved filters for a more satisfying experience",
+                                    "Develop a thematic yet clean UI which follows music-based themes while integrating smoothly into a Spotify user's UX expectations",
+                                ].map((goal, index) => {
+                                    return <div>{index + 1 + ". " + goal}</div>;
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                </FadeInElement>
+                <FadeInElement width={"25%"}>
+                    <div
+                        style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            height: "100%",
+                        }}
+                    >
                         <div className={styles.color_block_tile}>
                             <ColorBlock
                                 colors={[
@@ -85,39 +113,10 @@ export default function Page() {
                                 ]}
                             />
                         </div>
-                    </div>
-                    <div style={{ display: "flex", flexDirection: "row" }}>
-                        <div className={styles.project_goals_tile}>
-                            <div>Goals</div>
-                            <div
-                                style={{
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    fontSize: 16,
-                                    marginTop: 16,
-                                    gap: 10,
-                                }}
-                            >
-                                {[
-                                    "Reduce time spent finding concerts and events",
-                                    "Provide improved filters for a more satisfying experience",
-                                    "Develop a thematic yet clean UI which follows music-based themes while integrating smoothly into a Spotify user's UX expectations",
-                                ].map((goal, index) => {
-                                    return <div>{index + 1 + ". " + goal}</div>;
-                                })}
-                            </div>
-                        </div>
+
                         <div className={styles.project_details_tile}>
                             <div>Results</div>
-                            <div
-                                style={{
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    fontSize: 16,
-                                    marginTop: 16,
-                                    gap: 10,
-                                }}
-                            >
+                            <div className={styles.list}>
                                 {[
                                     "95% faster search times",
                                     "Added enhanced filters that allow for greater specificity and more filter options",

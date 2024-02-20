@@ -25,13 +25,13 @@ export default function Page() {
                 <FadeInElement width={"50%"}>
                     <div className={styles.project_description_tile}>
                         <div>
-                            medimate
+                            bruinbot
                             <div className={styles.chips}>
                                 {[
-                                    "Python",
-                                    "Raspberry Pi",
-                                    "OpenCV",
                                     "System Design",
+                                    "Python",
+                                    "Linux",
+                                    "Sensors & Signals",
                                 ].map((text, index) => {
                                     return <Chip key={index}>{text}</Chip>;
                                 })}

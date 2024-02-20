@@ -52,8 +52,14 @@ export default function Page() {
                         </Link>
                     </div>
                 </FadeInElement>
-                <FadeInElement width={"50%"}>
-                    <div style={{ display: "flex", flexDirection: "row" }}>
+                <FadeInElement width={"25%"}>
+                    <div
+                        style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            height: "100%",
+                        }}
+                    >
                         <div className={styles.typography_tile}>
                             <div style={{ fontFamily: "Optician-Sans" }}>
                                 Optician Sans
@@ -62,18 +68,6 @@ export default function Page() {
                                 WorkSans Regular
                             </div>
                         </div>
-                        <div className={styles.color_block_tile}>
-                            <ColorBlock
-                                colors={[
-                                    "#0d1014",
-                                    "#1b2024",
-                                    "#9077e1",
-                                    "#ffffff",
-                                ]}
-                            />
-                        </div>
-                    </div>
-                    <div style={{ display: "flex", flexDirection: "row" }}>
                         <div className={styles.project_goals_tile}>
                             <div>Goals</div>
                             <div
@@ -89,10 +83,31 @@ export default function Page() {
                                     "Highlight my past experiences and accomplishments, both professional and person",
                                     "Showcase my web development abilities",
                                     "Expand my Next.js and Typescript familiarity",
+                                    "Explore novel design styles",
                                 ].map((goal, index) => {
                                     return <div>{index + 1 + ". " + goal}</div>;
                                 })}
                             </div>
+                        </div>
+                    </div>
+                </FadeInElement>
+                <FadeInElement width={"25%"}>
+                    <div
+                        style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            height: "100%",
+                        }}
+                    >
+                        <div className={styles.color_block_tile}>
+                            <ColorBlock
+                                colors={[
+                                    "#0d1014",
+                                    "#1b2024",
+                                    "#9077e1",
+                                    "#ffffff",
+                                ]}
+                            />
                         </div>
                         <div className={styles.project_details_tile}>
                             <div>Results</div>

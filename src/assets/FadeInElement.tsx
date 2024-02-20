@@ -5,7 +5,7 @@ import styles from "@/app/app.module.css"; // Create a CSS module for styling
 
 interface FadeInElementProps {
     children: React.ReactNode;
-    width: string;
+    width: number;
 }
 
 const FadeInElement: React.FC<FadeInElementProps> = ({ children, width }) => {
@@ -16,10 +16,13 @@ const FadeInElement: React.FC<FadeInElementProps> = ({ children, width }) => {
                     ref={ref}
                     className={
                         inView
-                            ? styles.fadeInSectionVisible
-                            : styles.fadeInSectionInvisible
+                            ? `${styles.fadeInSectionVisible} ${
+                                  styles[`width${width}`]
+                              }`
+                            : `${styles.fadeInSectionInvisible} ${
+                                  styles[`width${width}`]
+                              }`
                     }
-                    style={{ width: width }}
                 >
                     {children}
                 </div>

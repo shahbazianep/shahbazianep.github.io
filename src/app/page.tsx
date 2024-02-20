@@ -4,10 +4,9 @@ import Stars from "@/assets/Stars";
 import Chip from "@/assets/Chip";
 import styles from "@/app/app.module.css";
 import Link from "next/link";
-import { useEffect } from "react";
-import anime from "animejs";
+import { useContext } from "react";
 import Image from "next/image";
-import Test from "@/assets/images/test.png";
+import Me from "@/assets/images/me.jpg";
 import NANIKA_DEMO from "@/assets/images/nanika_demo2.png";
 import CONCERTO_DEMO from "@/assets/images/concerto_demo2.png";
 import MEDIMATE_DEMO from "@/assets/images/medimate7.jpg";
@@ -28,6 +27,7 @@ import {
 import Timeline from "@/assets/Timeline";
 import Socials from "@/assets/Socials";
 import FadeInElement from "@/assets/FadeInElement";
+import { DarkModeContext } from "@/contexts/DarkModeContext";
 import { InView } from "react-intersection-observer";
 
 // Python, CSS, HTML, React, Typescript, Javascript, C++, Java, Git, VBA, Microsoft Suite, Django, SQL, Linux, NodeJS, NextJS, Firebase, Docker, Figma
@@ -68,6 +68,8 @@ const hobbyTools: { [key: string]: number } = {
 };
 
 export default function Page() {
+    const { darkMode, setDarkMode } = useContext(DarkModeContext);
+
     return (
         <div
             style={{
@@ -78,149 +80,147 @@ export default function Page() {
                 flexDirection: "column",
                 marginLeft: "auto",
                 marginRight: "auto",
+                maxWidth: 1600,
             }}
         >
             <div className={styles.row}>
-                <FadeInElement width={"60%"}>
-                    <div
-                        style={{
-                            borderRadius: 32,
-                            background:
-                                "linear-gradient(90deg, rgba(27,32,36,1) 0%, rgba(37,31,57,1) 100%)",
-                            height: "80vh",
-                            padding: 32,
-                            fontFamily: "WorkSans-Regular",
-                            color: "#FFF",
-                            fontSize: 48,
-                            position: "relative",
-                        }}
-                    >
-                        <Image
-                            src={Test}
-                            alt="hello"
-                            width={100}
-                            height={100}
-                            style={{ borderRadius: "50%" }}
-                            priority
-                        />
+                <FadeInElement width={60}>
+                    <div className={styles.landing_tile}>
+                        <div
+                            style={{
+                                height: 150,
+                                width: 150,
+                                overflow: "hidden",
+                                marginBottom: 10,
+                                borderRadius: "50%",
+                            }}
+                        >
+                            {Me ? (
+                                <Image
+                                    src={Me}
+                                    alt="hello"
+                                    style={{
+                                        borderRadius: "50%",
+                                        objectFit: "cover",
+                                        scale: 1.1,
+                                    }}
+                                    height={150}
+                                    width={150}
+                                    priority
+                                />
+                            ) : null}
+                        </div>
+
                         <div>
                             My name is Ethan Shahbazian, a software engineer
                             from the San Francisco Bay Area.
                         </div>
-                        <div
-                            style={{
-                                fontSize: 16,
-                                fontFamily: "WorkSans-Regular",
-                                marginTop: 100,
-                            }}
-                        >
+                        <div className={styles.subtext}>
                             I specialize in creating memorable, clean user
                             experiences and developing efficient, innovative
                             solutions to a variety of technical problems.
                         </div>
-                        <div
-                            style={{
-                                position: "absolute",
-                                bottom: 32,
-                                left: 32,
-                                display: "flex",
-                                flexDirection: "row",
-                                justifyContent: "space-between",
-                                width: 200,
-                            }}
-                        >
+                        <div className={styles.social_container}>
                             <Socials />
                         </div>
                     </div>
                 </FadeInElement>
-                <FadeInElement width={"40%"}>
-                    <div
-                        style={{
-                            borderRadius: 32,
-                            backgroundColor: "#1b2024",
-                            height: "80vh",
-                            padding: 32,
-                            fontFamily: "WorkSans-Regular",
-                            color: "#FFF",
-                            fontSize: 40,
-                            position: "relative",
-                            display: "flex",
-                            flexDirection: "column",
-                        }}
-                    >
+                <FadeInElement width={40}>
+                    <div className={styles.timeline_tile}>
                         <Timeline />
                     </div>
                 </FadeInElement>
             </div>
 
-            <div className={styles.row}>
-                <FadeInElement width={"25%"}>
-                    <div className={styles.skills_tile}>
-                        <PiGlobeThin size={60} className={styles.skills_icon} />
-                        <div style={{ marginBottom: 10 }}>Languages</div>
-                        {Object.keys(programmingTools).map(
-                            (e: string, i: number) => {
-                                return (
-                                    <Stars key={i} rating={programmingTools[e]}>
-                                        {e}
-                                    </Stars>
-                                );
-                            }
-                        )}
-                    </div>
-                </FadeInElement>
-                <FadeInElement width={"25%"}>
-                    <div className={styles.skills_tile}>
-                        <PiStackThin size={60} className={styles.skills_icon} />
-                        <div style={{ marginBottom: 10 }}>Technologies</div>
-                        {Object.keys(technologyTools).map(
-                            (e: string, i: number) => {
-                                return (
-                                    <Stars key={i} rating={technologyTools[e]}>
-                                        {e}
-                                    </Stars>
-                                );
-                            }
-                        )}
-                    </div>
-                </FadeInElement>
-                <FadeInElement width={"25%"}>
-                    <div className={styles.skills_tile}>
-                        <PiGitMergeThin
-                            size={60}
-                            className={styles.skills_icon}
-                        />
-                        <div style={{ marginBottom: 10 }}>Dev Tools </div>
-                        {Object.keys(developmentTools).map(
-                            (e: string, i: number) => {
-                                return (
-                                    <Stars key={i} rating={developmentTools[e]}>
-                                        {e}
-                                    </Stars>
-                                );
-                            }
-                        )}
-                    </div>
-                </FadeInElement>
-                <FadeInElement width={"25%"}>
-                    <div className={styles.skills_tile}>
-                        <PiPottedPlantThin
-                            size={60}
-                            className={styles.skills_icon}
-                        />
-                        <div style={{ marginBottom: 10 }}>Hobbies</div>
-                        {Object.keys(hobbyTools).map((e: string, i: number) => {
-                            return (
-                                <Stars key={i} rating={hobbyTools[e]}>
-                                    {e}
-                                </Stars>
-                            );
-                        })}
-                    </div>
-                </FadeInElement>
+            <div className={styles.skills_row}>
+                <div className={styles.division}>
+                    <FadeInElement width={50}>
+                        <div className={styles.skills_tile}>
+                            <PiGlobeThin
+                                size={60}
+                                className={styles.skills_icon}
+                            />
+                            <div style={{ marginBottom: 10 }}>Languages</div>
+                            {Object.keys(programmingTools).map(
+                                (e: string, i: number) => {
+                                    return (
+                                        <Stars
+                                            key={i}
+                                            rating={programmingTools[e]}
+                                        >
+                                            {e}
+                                        </Stars>
+                                    );
+                                }
+                            )}
+                        </div>
+                    </FadeInElement>
+                    <FadeInElement width={50}>
+                        <div className={styles.skills_tile}>
+                            <PiStackThin
+                                size={60}
+                                className={styles.skills_icon}
+                            />
+                            <div style={{ marginBottom: 10 }}>Technologies</div>
+                            {Object.keys(technologyTools).map(
+                                (e: string, i: number) => {
+                                    return (
+                                        <Stars
+                                            key={i}
+                                            rating={technologyTools[e]}
+                                        >
+                                            {e}
+                                        </Stars>
+                                    );
+                                }
+                            )}
+                        </div>
+                    </FadeInElement>
+                </div>
+                <div className={styles.division}>
+                    <FadeInElement width={50}>
+                        <div className={styles.skills_tile}>
+                            <PiGitMergeThin
+                                size={60}
+                                className={styles.skills_icon}
+                            />
+                            <div style={{ marginBottom: 10 }}>Dev Tools </div>
+                            {Object.keys(developmentTools).map(
+                                (e: string, i: number) => {
+                                    return (
+                                        <Stars
+                                            key={i}
+                                            rating={developmentTools[e]}
+                                        >
+                                            {e}
+                                        </Stars>
+                                    );
+                                }
+                            )}
+                        </div>
+                    </FadeInElement>
+                    <FadeInElement width={50}>
+                        <div className={styles.skills_tile}>
+                            <PiPottedPlantThin
+                                size={60}
+                                className={styles.skills_icon}
+                            />
+                            <div style={{ marginBottom: 10 }}>Hobbies</div>
+                            {Object.keys(hobbyTools).map(
+                                (e: string, i: number) => {
+                                    return (
+                                        <Stars key={i} rating={hobbyTools[e]}>
+                                            {e}
+                                        </Stars>
+                                    );
+                                }
+                            )}
+                        </div>
+                    </FadeInElement>
+                </div>
             </div>
             <div className={styles.row} id="projects">
-                <FadeInElement width={"50%"}>
+                <FadeInElement width={50}>
                     <Link href="/nanika" className={styles.project_tile_l}>
                         <div className={styles.title}>
                             nanika
@@ -233,27 +233,28 @@ export default function Page() {
                         <div className={styles.chips}>
                             {[
                                 "React Native",
+                                "Figma",
                                 "JavaScript",
                                 "Firebase",
-                                "Figma",
                             ].map((text, index) => {
                                 return <Chip key={index}>{text}</Chip>;
                             })}
                         </div>
-                        <div
-                            className={styles.image_wrapper}
-                            style={{ marginTop: 20 }}
-                        >
-                            <Image
-                                className={styles.image}
-                                src={NANIKA_DEMO}
-                                alt="Nanika Cover Image"
-                                style={{ width: "80%" }}
-                            />
+                        <div className={styles.image_container}>
+                            <div className={styles.image_wrapper}>
+                                {NANIKA_DEMO ? (
+                                    <Image
+                                        className={styles.image}
+                                        src={NANIKA_DEMO}
+                                        alt="Nanika Cover Image"
+                                        style={{ width: "80%" }}
+                                    />
+                                ) : null}
+                            </div>
                         </div>
                     </Link>
                 </FadeInElement>
-                <FadeInElement width={"50%"}>
+                <FadeInElement width={50}>
                     <Link href="/concerto" className={styles.project_tile_l}>
                         <div className={styles.title}>
                             concerto
@@ -269,29 +270,34 @@ export default function Page() {
                                 }
                             )}
                         </div>
-                        <div
-                            className={styles.image_wrapper}
-                            style={{ marginTop: 20 }}
-                        >
-                            <Image
-                                className={styles.image}
-                                src={CONCERTO_DEMO}
-                                alt="Concerto Cover Image"
-                                style={{ width: "100%", height: "100%" }}
-                            />
+                        <div className={styles.image_container}>
+                            <div className={styles.image_wrapper}>
+                                {CONCERTO_DEMO ? (
+                                    <Image
+                                        className={styles.image}
+                                        src={CONCERTO_DEMO}
+                                        alt="Concerto Cover Image"
+                                        style={{ width: "100%" }}
+                                    />
+                                ) : null}
+                            </div>
                         </div>
                     </Link>
                 </FadeInElement>
             </div>
             <div className={styles.row}>
-                <FadeInElement width={"25%"}>
+                <FadeInElement width={25}>
                     <Link href="/bruinbot" className={styles.project_tile_s}>
-                        <div className={styles.image_wrapper}>
-                            <Image
-                                src={BRUINBOT_DEMO}
-                                alt={"BruinBot Cover Image"}
-                                className={styles.image}
-                            />
+                        <div className={styles.image_container}>
+                            <div className={styles.image_wrapper}>
+                                {BRUINBOT_DEMO ? (
+                                    <Image
+                                        src={BRUINBOT_DEMO}
+                                        alt={"BruinBot Cover Image"}
+                                        className={styles.image}
+                                    />
+                                ) : null}
+                            </div>
                         </div>
                         <div className={styles.overlay}>
                             <div className={styles.title}>
@@ -306,7 +312,7 @@ export default function Page() {
                                     "System Design",
                                     "Python",
                                     "Linux",
-                                    "Sensors & Signals",
+                                    "Sensors/Signals",
                                 ].map((text, index) => {
                                     return <Chip key={index}>{text}</Chip>;
                                 })}
@@ -314,7 +320,7 @@ export default function Page() {
                         </div>
                     </Link>
                 </FadeInElement>
-                <FadeInElement width={"50%"}>
+                <FadeInElement width={50}>
                     <Link href="/portfolio" className={styles.project_tile_m}>
                         <div className={styles.title}>
                             portfolio
@@ -324,32 +330,37 @@ export default function Page() {
                             />
                         </div>
                         <div className={styles.chips}>
-                            {["React", "Typescript", "Next.js", "Figma"].map(
+                            {["React", "Next.js", "Typescript", "Figma"].map(
                                 (text, index) => {
                                     return <Chip key={index}>{text}</Chip>;
                                 }
                             )}
                         </div>
-                        <div
-                            className={styles.image_wrapper}
-                            style={{ marginTop: 20 }}
-                        >
-                            <Image
-                                className={styles.image}
-                                src={PORTFOLIO_DEMO}
-                                alt="Portfolio Cover Image"
-                            />
+                        <div className={styles.image_container}>
+                            <div className={styles.image_wrapper}>
+                                {PORTFOLIO_DEMO ? (
+                                    <Image
+                                        className={styles.image}
+                                        src={PORTFOLIO_DEMO}
+                                        alt="Portfolio Cover Image"
+                                    />
+                                ) : null}
+                            </div>
                         </div>
                     </Link>
                 </FadeInElement>
-                <FadeInElement width={"25%"}>
+                <FadeInElement width={25}>
                     <Link href="/medimate" className={styles.project_tile_s}>
-                        <div className={styles.image_wrapper}>
-                            <Image
-                                src={MEDIMATE_DEMO}
-                                alt={"MediMate Cover Image"}
-                                className={styles.image}
-                            />
+                        <div className={styles.image_container}>
+                            <div className={styles.image_wrapper}>
+                                {MEDIMATE_DEMO ? (
+                                    <Image
+                                        src={MEDIMATE_DEMO}
+                                        alt={"MediMate Cover Image"}
+                                        className={styles.image}
+                                    />
+                                ) : null}
+                            </div>
                         </div>
 
                         <div className={styles.overlay}>
@@ -362,9 +373,9 @@ export default function Page() {
                             </div>
                             <div className={styles.chips}>
                                 {[
-                                    "Python",
                                     "Raspberry Pi",
                                     "OpenCV",
+                                    "Python",
                                     "System Design",
                                 ].map((text, index) => {
                                     return <Chip key={index}>{text}</Chip>;
@@ -375,7 +386,7 @@ export default function Page() {
                 </FadeInElement>
             </div>
             <div className={styles.row} id="contact">
-                <FadeInElement width={"50%"}>
+                <FadeInElement width={50}>
                     <div className={styles.more_tile}>
                         <PiChatsCircleThin size={60} className={styles.icon} />
                         <div>
@@ -395,38 +406,17 @@ export default function Page() {
                         <Socials />
                     </div>
                 </FadeInElement>
-                <FadeInElement width={"50%"}>
-                    <div className={styles.more_tile}>
-                        <div
-                            style={{
-                                display: "flex",
-                                flexDirection: "row",
-                                height: "100%",
-                            }}
-                        >
-                            <div
-                                style={{
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    justifyContent: "space-between",
-                                    width: "40%",
-                                }}
-                            >
+                <FadeInElement width={50}>
+                    <div className={styles.more_tile_projects}>
+                        <div className={styles.container}>
+                            <div className={styles.title}>
                                 <PiCircleHalfTiltThin
                                     size={60}
                                     className={styles.icon}
                                 />
                                 <div>All Projects</div>
                             </div>
-                            <div
-                                style={{
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    justifyContent: "space-between",
-                                    width: "60%",
-                                    height: "100%",
-                                }}
-                            >
+                            <div className={styles.projects_container}>
                                 {[
                                     "nanika",
                                     "concerto",
@@ -435,22 +425,23 @@ export default function Page() {
                                     "medimate",
                                 ].map((project, index) => {
                                     return (
-                                        <div
-                                            style={{
-                                                borderTop:
-                                                    index == 0
-                                                        ? "none"
-                                                        : "1px solid #bbb",
-                                            }}
-                                            className={styles.project_list}
-                                            key={index}
-                                        >
-                                            {project}
-                                            <PiArrowRightThin
-                                                size={24}
-                                                className={styles.icon}
-                                            />
-                                        </div>
+                                        <Link href={`/${project}`} key={index}>
+                                            <div
+                                                style={{
+                                                    borderTop:
+                                                        index == 0
+                                                            ? "none"
+                                                            : "1px solid #bbb",
+                                                }}
+                                                className={styles.project_list}
+                                            >
+                                                {project}
+                                                <PiArrowRightThin
+                                                    size={24}
+                                                    className={styles.icon}
+                                                />
+                                            </div>
+                                        </Link>
                                     );
                                 })}
                             </div>

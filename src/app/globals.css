@@ -10,6 +10,25 @@ body {
     overflow-x: hidden;
 }
 
+:root {
+    --color-background: #0d1014;
+    --color-foreground: #1b2024;
+    --color-text: #f8faff;
+    --color-accent: #bbb;
+    --gradient: linear-gradient(
+        90deg,
+        rgba(27, 32, 36, 1) 0%,
+        rgba(37, 31, 57, 1) 100%
+    );
+    --image-overlay: rgba(27, 32, 36, 0.5);
+}
+
+/* body {
+    --color-background: #dde4ff;
+    --color-foreground: #f8faff;
+    --color-text: #1d1014;
+} */
+
 a {
     color: inherit;
     text-decoration: none;

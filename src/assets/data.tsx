@@ -13,7 +13,7 @@ export const timelineData = [
         subcompany: "BruinBot",
         role: "Electrical Team Lead",
         startDate: new Date("February 1, 2022"),
-        endDate: new Date("April 1, 2023"),
+        endDate: new Date("May 1, 2023"),
         description:
             "Worked as a member and then as a team lead in order to install, test, and integrate the electrical subsystems of BruinBot, an autonomous delivery robot intended for free use around UCLA's campus. Key tasks include the development of a basic motor system, integration and testing of the GPS system, and integration and testing of the camera system to be used with our computer vision pipeline.",
     },
