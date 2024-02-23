@@ -76,9 +76,9 @@ export default function Page() {
                                             display: "flex",
                                             flexDirection: "row",
                                         }}
+                                        key={i}
                                     >
                                         <li
-                                            key={i}
                                             style={{
                                                 float: "left",
                                             }}

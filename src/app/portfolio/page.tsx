@@ -111,7 +111,9 @@ export default function Page() {
                                         "Explore novel design styles",
                                     ].map((goal, index) => {
                                         return (
-                                            <div>{index + 1 + ". " + goal}</div>
+                                            <div key={index}>
+                                                {index + 1 + ". " + goal}
+                                            </div>
                                         );
                                     })}
                                 </div>

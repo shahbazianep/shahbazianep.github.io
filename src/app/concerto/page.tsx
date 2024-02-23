@@ -125,7 +125,9 @@ export default function Page() {
                                         "Develop a thematic yet clean UI which follows music-based themes while integrating smoothly into a Spotify user's UX expectations",
                                     ].map((goal, index) => {
                                         return (
-                                            <div>{index + 1 + ". " + goal}</div>
+                                            <div key={index}>
+                                                {index + 1 + ". " + goal}
+                                            </div>
                                         );
                                     })}
                                 </div>
@@ -139,7 +141,9 @@ export default function Page() {
                                         "Designed and implemented a smooth, simple UI that mimics the Spotify user experience",
                                     ].map((goal, index) => {
                                         return (
-                                            <div>{index + 1 + ". " + goal}</div>
+                                            <div key={index}>
+                                                {index + 1 + ". " + goal}
+                                            </div>
                                         );
                                     })}
                                 </div>

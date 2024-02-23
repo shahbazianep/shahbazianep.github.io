@@ -46,11 +46,11 @@ export default function Page() {
                             mental health by leveraging the principle of
                             emotional contagion. It allows users to securely log
                             and track their emotions over time while providing
-                            an anonymous, summarized view into a their friends'
-                            emotional states. Users can join and create clusters
-                            which enable the emotional contagion, helping bias
-                            their moods towards more positive emotions over
-                            time.
+                            an anonymous, summarized view into a their
+                            friends&apos; emotional states. Users can join and
+                            create clusters which enable the emotional
+                            contagion, helping bias their moods towards more
+                            positive emotions over time.
                         </div>
                         <Link href="/">
                             <div className={styles.link}>Visit website</div>
@@ -120,7 +120,9 @@ export default function Page() {
                                         "Designed and implemented a smooth, simple UI that mimics the Spotify user experience",
                                     ].map((goal, index) => {
                                         return (
-                                            <div>{index + 1 + ". " + goal}</div>
+                                            <div key={index}>
+                                                {index + 1 + ". " + goal}
+                                            </div>
                                         );
                                     })}
                                 </div>
@@ -134,7 +136,9 @@ export default function Page() {
                                         "Allow for anonymized social interaction via clusters",
                                     ].map((goal, index) => {
                                         return (
-                                            <div>{index + 1 + ". " + goal}</div>
+                                            <div key={index}>
+                                                {index + 1 + ". " + goal}
+                                            </div>
                                         );
                                     })}
                                 </div>
