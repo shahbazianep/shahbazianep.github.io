@@ -1,4 +1,5 @@
 .background {
+    min-height: 100vh;
     width: 100%;
     background-color: var(--color-background);
     display: flex;
@@ -290,6 +291,12 @@
     position: relative;
     height: 357px;
 }
+.skills_title {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+}
 
 .chip {
     font-size: 16px;
@@ -553,6 +560,14 @@
     margin-bottom: 16px;
     margin-top: 16px;
 }
+.project_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 16px;
+    margin-top: 16px;
+}
 .division {
     display: flex;
     flex-direction: row;
@@ -588,14 +603,32 @@
 .width50 {
     width: 50%;
 }
+.width100 {
+    width: 100%;
+}
+.project_width60 {
+    width: 60%;
+}
+.project_width40 {
+    width: 40%;
+}
+.project_width25 {
+    width: 25%;
+}
+.project_width50 {
+    width: 50%;
+}
+.project_width100 {
+    width: 100%;
+}
 
 .project_description_tile {
     border-radius: 32px;
-    background-color: #1b2024;
-    height: 70vh;
+    background-color: var(--color-foreground);
+    height: 100%;
     padding: 32px;
     font-family: WorkSans-Regular;
-    color: #fff;
+    color: var(--color-text);
     font-size: 40px;
     position: relative;
     display: flex;
@@ -618,22 +651,21 @@
 }
 
 .color_block_tile {
+    height: 100%;
     width: 100%;
     border-radius: 32px;
     background-color: #1b2024;
-    height: 25vh;
     padding: 32px;
     font-size: 32px;
     display: flex;
     margin-bottom: 32px;
     align-items: center;
     justify-content: center;
-    flex: none;
 }
-
 .typography_tile {
+    height: 100%;
+    min-width: calc(50% - 8pc);
     width: 100%;
-    height: 25vh;
     border-radius: 32px;
     background-color: #1b2024;
     padding: 32px;
@@ -643,11 +675,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    flex: none;
 }
+
 .project_goals_tile {
     width: 100%;
-    height: 100%;
     border-radius: 32px;
     background-color: #1b2024;
     padding: 32px;
@@ -685,8 +716,20 @@
     overflow: hidden;
 }
 
+.project_demo_video {
+    display: flex;
+    width: min-content;
+    height: min-content;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 32px;
+    overflow: hidden;
+}
+
 .project_highlight_image {
     width: auto;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-self: center;
@@ -734,6 +777,129 @@
     font-size: 16px;
     margin-top: 16px;
     gap: 16px;
+}
+
+@media (max-width: 1280px) {
+    .landing_tile {
+        font-size: 40px;
+    }
+    .skills_row {
+        flex-direction: column;
+        gap: 32px;
+    }
+    .skills_tile {
+        height: 300px;
+    }
+    .skills_title {
+        flex-direction: row;
+        align-items: end;
+        justify-content: space-between;
+    }
+    .project_tile_l {
+        height: 70vh;
+    }
+    .more_tile_projects .title {
+        padding-right: 10px;
+    }
+    .project_row {
+        flex-direction: column;
+        gap: 32px;
+    }
+    .project_tile_s .icon {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header_container {
+        flex-direction: column;
+        justify-content: left;
+        font-size: 24px;
+        align-self: center;
+    }
+    .row {
+        flex-direction: column;
+        gap: 32px;
+    }
+    .landing_tile {
+        font-size: 24px;
+        height: 60vh;
+        min-height: 500px;
+    }
+    .landing_tile .subtext {
+        margin-top: 20px;
+    }
+    .landing_tile .social_container {
+        bottom: 32px;
+        left: calc(50%-100px);
+    }
+    .width60,
+    .width40,
+    .width25,
+    .width50 {
+        width: 100%;
+    }
+    .fadeInSectionVisible,
+    .fadeInSectionInvisible {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .division {
+        gap: 32px;
+    }
+    .project_tile_l,
+    .project_tile_m {
+        min-height: 450px;
+        height: 50vh;
+    }
+    .more_tile,
+    .more_tile_projects {
+        min-height: 300px;
+    }
+    .project_tile_s .overlay {
+        opacity: 1;
+    }
+    .project_list .icon {
+        color: #9077e1;
+        opacity: 1;
+    }
+    .project_tile_l .icon,
+    .project_tile_m .icon,
+    .project_tile_s .icon {
+        opacity: 1;
+    }
+    .sun_button {
+        position: fixed;
+        padding: 10px;
+        border-radius: 50%;
+        z-index: 2;
+        right: 32px;
+        bottom: 32px;
+        background-color: var(--color-text);
+        color: #9077e1;
+    }
+    .pulse {
+        display: none;
+    }
+    .project_tile_l .image,
+    .project_tile_m .image {
+        width: 100%;
+        max-height: 200px;
+        height: 100%;
+        object-fit: contain;
+    }
+    .project_tile_s {
+        height: 30vh;
+    }
+    .skills_tile {
+        height: 357px;
+    }
+    .skills_title {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
 }
 
 @media (max-width: 640px) {
@@ -835,102 +1001,13 @@
     }
 }
 
-@media (max-width: 1024px) {
-    .header_container {
-        flex-direction: column;
-        justify-content: left;
-        font-size: 24px;
-        align-self: center;
-    }
-    .row {
-        flex-direction: column;
-        gap: 32px;
-    }
-    .landing_tile {
-        font-size: 24px;
+@media (min-width: 1600px) {
+    .project_description_tile {
         height: 60vh;
-        min-height: 500px;
     }
-    .landing_tile .subtext {
-        margin-top: 20px;
-    }
-    .landing_tile .social_container {
-        bottom: 32px;
-        left: calc(50%-100px);
-    }
-    .width60,
-    .width40,
-    .width25,
-    .width50 {
-        width: 100%;
-    }
-    .fadeInSectionVisible,
-    .fadeInSectionInvisible {
-        margin-left: 0px;
-        margin-right: 0px;
-    }
-    .division {
-        gap: 32px;
-    }
-    .project_tile_l,
-    .project_tile_m {
-        min-height: 450px;
-        height: 50vh;
-    }
-    .more_tile,
-    .more_tile_projects {
-        min-height: 300px;
-    }
-    .project_tile_s .overlay {
-        opacity: 1;
-    }
-    .project_list .icon {
-        color: #9077e1;
-        opacity: 1;
-    }
-    .project_tile_l .icon,
-    .project_tile_m .icon,
-    .project_tile_s .icon {
-        opacity: 1;
-    }
-    .sun_button {
-        position: fixed;
-        padding: 10px;
-        border-radius: 50%;
-        z-index: 2;
-        right: 32px;
-        bottom: 32px;
-        background-color: var(--color-text);
-        color: #9077e1;
-    }
-    .pulse {
-        display: none;
-    }
-    .project_tile_l .image,
-    .project_tile_m .image {
-        width: auto;
-        max-height: 320px;
-        height: 100%;
-        object-fit: contain;
-    }
-    .project_tile_s {
-        height: 30vh;
-    }
-}
-
-@media (max-width: 1280px) {
-    .landing_tile {
-        font-size: 40px;
-    }
-    .skills_row {
-        flex-direction: column;
-        gap: 32px;
-    }
-    .project_tile_l {
-        height: 70vh;
-    }
-    .more_tile_projects .title {
-        padding-right: 10px;
+    .project_goals_tile,
+    .project_details_tile {
+        min-height: calc(35vh - 32px);
     }
 }
 

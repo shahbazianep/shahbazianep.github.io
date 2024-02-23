@@ -1,12 +1,13 @@
 "use client";
 
-import ColorBlock from "@/assets/ColorBlock";
 import Chip from "@/assets/Chip";
-import Test from "@/assets/images/concerto_demo2.png";
+import SYSTEM from "@/assets/images/medimate_system.png";
+import UNWRAP from "@/assets/images/medimate_unwrapping.png";
+import OCR from "@/assets/images/medimate_ocr.png";
+import SCHEDULE from "@/assets/images/medimate_schedule.png";
 import Image from "next/image";
 import styles from "@/app/app.module.css";
 import FadeInElement from "@/assets/FadeInElement";
-import Link from "next/link";
 
 export default function Page() {
     return (
@@ -19,10 +20,13 @@ export default function Page() {
                 flexDirection: "column",
                 fontFamily: "WorkSans-Regular",
                 color: "#fff",
+                maxWidth: 1600,
+                marginLeft: "auto",
+                marginRight: "auto",
             }}
         >
             <div className={styles.row}>
-                <FadeInElement width={"50%"}>
+                <FadeInElement width={50}>
                     <div className={styles.project_description_tile}>
                         <div>
                             medimate
@@ -47,12 +51,9 @@ export default function Page() {
                             medication related hospitalizations and allow for
                             our target population to operate more independently.
                         </div>
-                        <Link href="/">
-                            <div className={styles.link}>Visit website</div>
-                        </Link>
                     </div>
                 </FadeInElement>
-                <FadeInElement width={"25%"}>
+                <FadeInElement width={25}>
                     <div className={styles.background_tile}>
                         Research
                         <div
@@ -89,7 +90,7 @@ export default function Page() {
                         </div>
                     </div>
                 </FadeInElement>
-                <FadeInElement width={"25%"}>
+                <FadeInElement width={25}>
                     <div className={styles.background_tile}>
                         System Design
                         <div className={styles.list}>
@@ -128,10 +129,10 @@ export default function Page() {
             </div>
 
             <div className={styles.row}>
-                <FadeInElement width={"100%"}>
+                <FadeInElement width={100}>
                     <div className={styles.project_demo_image}>
                         <Image
-                            src={Test}
+                            src={SYSTEM}
                             alt="test"
                             style={{ width: "100%", height: "auto" }}
                         />
@@ -139,19 +140,28 @@ export default function Page() {
                 </FadeInElement>
             </div>
             <div className={styles.row}>
-                <FadeInElement width={"50%"}>
+                <FadeInElement width={50}>
                     <div className={styles.project_highlight_image}>
                         <Image
-                            src={Test}
+                            src={UNWRAP}
                             alt="test"
                             style={{ width: "100%", height: "auto" }}
                         />
                     </div>
                 </FadeInElement>
-                <FadeInElement width={"50%"}>
+                <FadeInElement width={25}>
                     <div className={styles.project_highlight_image}>
                         <Image
-                            src={Test}
+                            src={OCR}
+                            alt="test"
+                            style={{ width: "100%", height: "auto" }}
+                        />
+                    </div>
+                </FadeInElement>
+                <FadeInElement width={25}>
+                    <div className={styles.project_highlight_image}>
+                        <Image
+                            src={SCHEDULE}
                             alt="test"
                             style={{ width: "100%", height: "auto" }}
                         />

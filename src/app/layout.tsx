@@ -99,7 +99,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                         <div
                             style={{
                                 flex: 1,
-                                minHeight: "100vh",
                                 width: "100%",
                             }}
                         >

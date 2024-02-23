@@ -136,11 +136,15 @@ export default function Page() {
                 <div className={styles.division}>
                     <FadeInElement width={50}>
                         <div className={styles.skills_tile}>
-                            <PiGlobeThin
-                                size={60}
-                                className={styles.skills_icon}
-                            />
-                            <div style={{ marginBottom: 10 }}>Languages</div>
+                            <div className={styles.skills_title}>
+                                <PiGlobeThin
+                                    size={60}
+                                    className={styles.skills_icon}
+                                />
+                                <div style={{ marginBottom: 10 }}>
+                                    Languages
+                                </div>
+                            </div>
                             {Object.keys(programmingTools).map(
                                 (e: string, i: number) => {
                                     return (
@@ -157,11 +161,15 @@ export default function Page() {
                     </FadeInElement>
                     <FadeInElement width={50}>
                         <div className={styles.skills_tile}>
-                            <PiStackThin
-                                size={60}
-                                className={styles.skills_icon}
-                            />
-                            <div style={{ marginBottom: 10 }}>Technologies</div>
+                            <div className={styles.skills_title}>
+                                <PiStackThin
+                                    size={60}
+                                    className={styles.skills_icon}
+                                />
+                                <div style={{ marginBottom: 10 }}>
+                                    Technologies
+                                </div>
+                            </div>
                             {Object.keys(technologyTools).map(
                                 (e: string, i: number) => {
                                     return (
@@ -180,11 +188,15 @@ export default function Page() {
                 <div className={styles.division}>
                     <FadeInElement width={50}>
                         <div className={styles.skills_tile}>
-                            <PiGitMergeThin
-                                size={60}
-                                className={styles.skills_icon}
-                            />
-                            <div style={{ marginBottom: 10 }}>Dev Tools </div>
+                            <div className={styles.skills_title}>
+                                <PiGitMergeThin
+                                    size={60}
+                                    className={styles.skills_icon}
+                                />
+                                <div style={{ marginBottom: 10 }}>
+                                    Dev Tools{" "}
+                                </div>
+                            </div>
                             {Object.keys(developmentTools).map(
                                 (e: string, i: number) => {
                                     return (
@@ -201,11 +213,13 @@ export default function Page() {
                     </FadeInElement>
                     <FadeInElement width={50}>
                         <div className={styles.skills_tile}>
-                            <PiPottedPlantThin
-                                size={60}
-                                className={styles.skills_icon}
-                            />
-                            <div style={{ marginBottom: 10 }}>Hobbies</div>
+                            <div className={styles.skills_title}>
+                                <PiPottedPlantThin
+                                    size={60}
+                                    className={styles.skills_icon}
+                                />
+                                <div style={{ marginBottom: 10 }}>Hobbies</div>
+                            </div>
                             {Object.keys(hobbyTools).map(
                                 (e: string, i: number) => {
                                     return (
@@ -247,7 +261,7 @@ export default function Page() {
                                         className={styles.image}
                                         src={NANIKA_DEMO}
                                         alt="Nanika Cover Image"
-                                        style={{ width: "80%" }}
+                                        style={{ width: "100%" }}
                                     />
                                 ) : null}
                             </div>

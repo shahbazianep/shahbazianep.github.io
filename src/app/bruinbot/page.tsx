@@ -19,10 +19,13 @@ export default function Page() {
                 flexDirection: "column",
                 fontFamily: "WorkSans-Regular",
                 color: "#fff",
+                maxWidth: 1600,
+                marginLeft: "auto",
+                marginRight: "auto",
             }}
         >
-            <div className={styles.row}>
-                <FadeInElement width={"50%"}>
+            <div className={styles.project_row}>
+                <FadeInElement width={50}>
                     <div className={styles.project_description_tile}>
                         <div>
                             bruinbot
@@ -38,123 +41,56 @@ export default function Page() {
                             </div>
                         </div>
                         <div style={{ fontSize: 24, marginTop: 16 }}>
-                            Medimate is a system that enables safer, more
-                            independent prescription medication management for
-                            elderly and visually impaired populations. I worked
-                            in a team of 5 for my robotics capstone project to
-                            create several subsystems. When combined these
-                            subsystems created a device that would minimize
-                            medication related hospitalizations and allow for
-                            our target population to operate more independently.
-                        </div>
-                        <Link href="/">
-                            <div className={styles.link}>Visit website</div>
-                        </Link>
-                    </div>
-                </FadeInElement>
-                <FadeInElement width={"25%"}>
-                    <div className={styles.background_tile}>
-                        Research
-                        <div
-                            className={styles.list}
-                            style={{
-                                listStylePosition: "inside",
-                            }}
-                        >
-                            {[
-                                "285 million visually impaired people worldwide",
-                                "54% of adults 50+ take 4 or more prescription medications",
-                                "Many adults aged 50+ visit upwards of 5 different doctors annually",
-                                "Correlations shown between visual impairment/old age and medication mismanagement",
-                                "Medication mismanagement can be forgetting to take medication on time, problems reading dosages, or troubles differentiating medications",
-                                "This ultimately can lead to overdosing, underdosing, addiction, and hospitalization",
-                            ].map((fact, i) => {
-                                return (
-                                    <div
-                                        style={{
-                                            display: "flex",
-                                            flexDirection: "row",
-                                        }}
-                                    >
-                                        <li
-                                            key={i}
-                                            style={{
-                                                float: "left",
-                                            }}
-                                        ></li>
-                                        <div>{fact}</div>
-                                    </div>
-                                );
-                            })}
+                            Bruinbot is a UCLA DevX team of student engineers
+                            and designers designing and creating an anonymous
+                            rover system. This rover is intended to be provided
+                            for free use by the school and local businesses for
+                            food delivery, mail delivery, security, tours, and
+                            more. I led the electrical team to design,
+                            implement, and integrate several sensor systems on
+                            the initial mechanical prototype. These systems
+                            provide critical data that is used to provide the
+                            rover with autonomy and independence.
                         </div>
                     </div>
                 </FadeInElement>
-                <FadeInElement width={"25%"}>
-                    <div className={styles.background_tile}>
-                        System Design
+
+                <FadeInElement width={25}>
+                    <div className={styles.project_goals_tile}>
+                        <div>Goals</div>
                         <div className={styles.list}>
                             {[
-                                {
-                                    name: "Computer Vision",
-                                    description:
-                                        "Reads the pill label and uses CV algorithms to unwrap the label, stitch together adjacent images, and parse the text from the final image.",
-                                },
-                                {
-                                    name: "Scheduling",
-                                    description:
-                                        "Internally stores the information given in the pill label to determine proper dosage and dispensing periods/frequency.",
-                                },
-                                {
-                                    name: "Organizational",
-                                    description:
-                                        "Physically separates the individual medications into different containers within the machine, allowing for easy dispensing later.",
-                                },
-                                {
-                                    name: "Dispensing",
-                                    description:
-                                        "Accesses the internal containers to dispense the proper dosage of a given medication following that medicine's specific schedule.",
-                                },
-                            ].map((subsystem, i) => {
+                                "Using provided specs and requirements for data type, data quality, robustness, and performance, choose parts for camera system, GPS system, and power system",
+                                "Design and implement each of these subsystems using Python and our central computing system (RPi 4)",
+                                "Integrate these systems with the existing mechanical skeleton",
+                                "Provide accurate testing data to be used by autonomy and software teams in the development of mapping, computer vision, and obstacle avoidance algorithms",
+                            ].map((goal, index) => {
                                 return (
-                                    <div key={i}>
-                                        <b>{subsystem.name}: </b>
-                                        {subsystem.description}
+                                    <div key={index}>
+                                        {index + 1 + ". " + goal}
                                     </div>
                                 );
                             })}
                         </div>
                     </div>
                 </FadeInElement>
-            </div>
-
-            <div className={styles.row}>
-                <FadeInElement width={"100%"}>
-                    <div className={styles.project_demo_image}>
-                        <Image
-                            src={Test}
-                            alt="test"
-                            style={{ width: "100%", height: "auto" }}
-                        />
-                    </div>
-                </FadeInElement>
-            </div>
-            <div className={styles.row}>
-                <FadeInElement width={"50%"}>
-                    <div className={styles.project_highlight_image}>
-                        <Image
-                            src={Test}
-                            alt="test"
-                            style={{ width: "100%", height: "auto" }}
-                        />
-                    </div>
-                </FadeInElement>
-                <FadeInElement width={"50%"}>
-                    <div className={styles.project_highlight_image}>
-                        <Image
-                            src={Test}
-                            alt="test"
-                            style={{ width: "100%", height: "auto" }}
-                        />
+                <FadeInElement width={25}>
+                    <div className={styles.project_details_tile}>
+                        <div>Results</div>
+                        <div className={styles.list}>
+                            {[
+                                "Successful selection of parts that satisfy these 3 core subsystems and provide accurate signal collection under budget and integration constraints",
+                                "Full integration and unit testing of each subsystem, as well as exploration of adjacent signal data",
+                                "Power subsystem was successfully integrated while design considerations chose to separate other subsystems until further prototyping",
+                                "Collection and testing of sample data in order to provide software and autonomy teams with more realistic data sets",
+                            ].map((goal, index) => {
+                                return (
+                                    <div key={index}>
+                                        {index + 1 + ". " + goal}
+                                    </div>
+                                );
+                            })}
+                        </div>
                     </div>
                 </FadeInElement>
             </div>

@@ -34,30 +34,11 @@ export default function ColorBlock({ colors }: { colors: Array<string> }) {
                 }}
             >
                 {colors
-                    .slice(0, Math.ceil(colors.length / 3))
-                    .map((color, i) => (
-                        <div
-                            key={i}
-                            style={{
-                                backgroundColor: color,
-                                color: getContrastColor(color),
-                            }}
-                            className={styles.color_block}
-                        >
-                            <span className={styles.color_text}>{color}</span>
-                        </div>
-                    ))}
-            </div>
-            <div
-                style={{
-                    display: "flex",
-                    height: "100%",
-                }}
-            >
-                {colors
                     .slice(
-                        Math.ceil(colors.length / 3),
-                        Math.ceil((2 * colors.length) / 3)
+                        0,
+                        Math.ceil(
+                            colors.length / (colors.length % 3 === 0 ? 3 : 2)
+                        )
                     )
                     .map((color, i) => (
                         <div
@@ -79,7 +60,15 @@ export default function ColorBlock({ colors }: { colors: Array<string> }) {
                 }}
             >
                 {colors
-                    .slice(Math.ceil((2 * colors.length) / 3), colors.length)
+                    .slice(
+                        Math.ceil(
+                            colors.length / (colors.length % 3 === 0 ? 3 : 2)
+                        ),
+                        Math.ceil(
+                            (2 * colors.length) /
+                                (colors.length % 3 === 0 ? 3 : 2)
+                        )
+                    )
                     .map((color, i) => (
                         <div
                             key={i}
@@ -93,6 +82,34 @@ export default function ColorBlock({ colors }: { colors: Array<string> }) {
                         </div>
                     ))}
             </div>
+            {colors.length % 3 == 0 ? (
+                <div
+                    style={{
+                        display: "flex",
+                        height: "100%",
+                    }}
+                >
+                    {colors
+                        .slice(
+                            Math.ceil((2 * colors.length) / 3),
+                            colors.length
+                        )
+                        .map((color, i) => (
+                            <div
+                                key={i}
+                                style={{
+                                    backgroundColor: color,
+                                    color: getContrastColor(color),
+                                }}
+                                className={styles.color_block}
+                            >
+                                <span className={styles.color_text}>
+                                    {color}
+                                </span>
+                            </div>
+                        ))}
+                </div>
+            ) : null}
         </div>
     );
 }
