@@ -47,9 +47,9 @@ a {
 }
 
 @font-face {
-    font-family: "Raleway-Semibold";
-    src: local("Raleway-Semibold"),
-        url(../fonts/concerto/Raleway-Semibold.ttf) format("truetype");
+    font-family: "Raleway-SemiBold";
+    src: local("Raleway-SemiBold"),
+        url(../fonts/concerto/Raleway-SemiBold.ttf) format("truetype");
 }
 
 @font-face {
