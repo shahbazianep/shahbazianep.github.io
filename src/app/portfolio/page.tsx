@@ -246,7 +246,7 @@ export default function Page() {
                 </FadeInElement>
             </div> */}
 
-            <div className={styles.row}>
+            {/* <div className={styles.row}>
                 <FadeInElement width={100}>
                     <div className={styles.project_demo_image}>
                         <Image
@@ -276,7 +276,7 @@ export default function Page() {
                         />
                     </div>
                 </FadeInElement>
-            </div>
+            </div> */}
         </div>
     );
 }

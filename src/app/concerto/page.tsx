@@ -52,9 +52,10 @@ export default function Page() {
                             what fits their schedule, budget, tastes, or
                             location.
                         </div>
-                        <Link href="/">
-                            <div className={styles.link}>Visit website</div>
-                        </Link>
+                        {/* <Link href="/">
+                            <div className={styles.link}>Not yet public.</div>
+                        </Link> */}
+                        <div className={styles.link}>Not yet public.</div>
                     </div>
                 </FadeInElement>
                 <FadeInElement width={50}>
