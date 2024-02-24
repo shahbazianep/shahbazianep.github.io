@@ -15,22 +15,24 @@ export default function ColorBlock({ colors }: { colors: Array<string> }) {
         return luminance > 128 ? "#0d1014" : "#ffffff";
     }
 
+    const rows = colors.length % 3 == 0 ? 3 : 2;
+
     return (
         <div
             style={{
                 flexDirection: "column", // Change to column to stack rows
-                display: "flex",
                 width: "100%",
                 height: "100%",
                 justifyContent: "space-evenly",
                 borderRadius: 12,
                 overflow: "hidden",
+                minHeight: rows * 40,
             }}
         >
             <div
                 style={{
                     display: "flex",
-                    height: "100%",
+                    height: colors.length % 3 == 0 ? "33%" : "50%",
                 }}
             >
                 {colors
@@ -56,7 +58,7 @@ export default function ColorBlock({ colors }: { colors: Array<string> }) {
             <div
                 style={{
                     display: "flex",
-                    height: "100%",
+                    height: colors.length % 3 == 0 ? "33%" : "50%",
                 }}
             >
                 {colors
@@ -86,7 +88,7 @@ export default function ColorBlock({ colors }: { colors: Array<string> }) {
                 <div
                     style={{
                         display: "flex",
-                        height: "100%",
+                        height: colors.length % 3 == 0 ? "33%" : "0%",
                     }}
                 >
                     {colors

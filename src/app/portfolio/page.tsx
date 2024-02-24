@@ -64,14 +64,7 @@ export default function Page() {
                             gap: 32,
                         }}
                     >
-                        <div
-                            style={{
-                                display: "flex",
-                                flexDirection: "row",
-                                gap: 32,
-                                height: "25vh",
-                            }}
-                        >
+                        <div className={styles.project_division}>
                             <div className={styles.typography_tile}>
                                 <div style={{ fontFamily: "Optician-Sans" }}>
                                     Optician Sans
@@ -93,14 +86,7 @@ export default function Page() {
                                 />
                             </div>
                         </div>
-                        <div
-                            style={{
-                                display: "flex",
-                                flexDirection: "row",
-                                gap: 32,
-                                height: "100%",
-                            }}
-                        >
+                        <div className={styles.project_division}>
                             <div className={styles.project_goals_tile}>
                                 <div>Goals</div>
                                 <div className={styles.list}>
