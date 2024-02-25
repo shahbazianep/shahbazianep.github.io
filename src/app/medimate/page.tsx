@@ -128,8 +128,8 @@ export default function Page() {
                 <FadeInElement width={100}>
                     <div className={styles.project_demo_image}>
                         <Image
-                            src={"/images/medimate_system.png"}
-                            alt="test"
+                            src="/images/medimate_system.png"
+                            alt="Medimate system design"
                             style={{ width: "100%", height: "auto" }}
                         />
                     </div>
@@ -139,8 +139,8 @@ export default function Page() {
                 <FadeInElement width={50}>
                     <div className={styles.project_highlight_image}>
                         <Image
-                            src={"/images/medimate_unwrap.png"}
-                            alt="test"
+                            src="/images/medimate_unwrapping.png"
+                            alt="Medimate unwrapping results"
                             style={{ width: "100%", height: "auto" }}
                         />
                     </div>
@@ -148,8 +148,8 @@ export default function Page() {
                 <FadeInElement width={25}>
                     <div className={styles.project_highlight_image}>
                         <Image
-                            src={"/images/medimate_ocr.png"}
-                            alt="test"
+                            src="/images/medimate_ocr.png"
+                            alt="Medimate OCR results"
                             style={{ width: "100%", height: "auto" }}
                         />
                     </div>
@@ -157,8 +157,8 @@ export default function Page() {
                 <FadeInElement width={25}>
                     <div className={styles.project_highlight_image}>
                         <Image
-                            src={"/images/medimate_schedule.png"}
-                            alt="test"
+                            src="/images/medimate_schedule.png"
+                            alt="Medimate scheduling results"
                             style={{ width: "100%", height: "auto" }}
                         />
                     </div>

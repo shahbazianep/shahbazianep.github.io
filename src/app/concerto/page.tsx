@@ -139,8 +139,8 @@ export default function Page() {
                 <FadeInElement width={100}>
                     <div className={styles.project_demo_image}>
                         <Image
-                            src={"/images/concerto_home.png"}
-                            alt="test"
+                            src="/images/concerto_home.png"
+                            alt="Concerto home screen"
                             style={{ width: "100%", height: "auto" }}
                         />
                     </div>
@@ -150,8 +150,8 @@ export default function Page() {
                 <FadeInElement width={100}>
                     <div className={styles.project_highlight_image}>
                         <Image
-                            src={"/images/concerto_loading.png"}
-                            alt="test"
+                            src="/images/concerto_loading.png"
+                            alt="Concerto loading screen"
                             style={{ width: "100%", height: "auto" }}
                         />
                     </div>
@@ -161,8 +161,8 @@ export default function Page() {
                 <FadeInElement width={100}>
                     <div className={styles.project_highlight_image}>
                         <Image
-                            src={"/images/concerto_results.png"}
-                            alt="test"
+                            src="/images/concerto_results.png"
+                            alt="Concerto results screen"
                             style={{ width: "100%", height: "auto" }}
                         />
                     </div>

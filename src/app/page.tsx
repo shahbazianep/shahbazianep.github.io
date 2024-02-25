@@ -89,8 +89,8 @@ export default function Page() {
                             }}
                         >
                             <Image
-                                src={"/images/me.jpg"}
-                                alt="hello"
+                                src="/images/me.jpg"
+                                alt="Personal picture"
                                 style={{
                                     borderRadius: "50%",
                                     objectFit: "cover",
@@ -249,7 +249,7 @@ export default function Page() {
                             <div className={styles.image_wrapper}>
                                 <Image
                                     className={styles.image}
-                                    src={"/images/nanika_cover.png"}
+                                    src="/images/nanika_cover.png"
                                     alt="Nanika Cover Image"
                                     width={0}
                                     height={0}
@@ -280,7 +280,7 @@ export default function Page() {
                             <div className={styles.image_wrapper}>
                                 <Image
                                     className={styles.image}
-                                    src={"/images/concerto_cover.png"}
+                                    src="/images/concerto_cover.png"
                                     alt="Concerto Cover Image"
                                     width={0}
                                     height={0}
@@ -298,8 +298,8 @@ export default function Page() {
                         <div className={styles.image_container}>
                             <div className={styles.image_wrapper}>
                                 <Image
-                                    src={"/images/bruinbot_cover.jpg"}
-                                    alt={"BruinBot Cover Image"}
+                                    src="/images/bruinbot_cover.jpg"
+                                    alt="BruinBot Cover Image"
                                     className={styles.image}
                                     fill
                                 />
@@ -346,7 +346,7 @@ export default function Page() {
                             <div className={styles.image_wrapper}>
                                 <Image
                                     className={styles.image}
-                                    src={"/images/portfolio_cover.png"}
+                                    src="/images/portfolio_cover.png"
                                     alt="Portfolio Cover Image"
                                     width={0}
                                     height={0}
@@ -362,8 +362,8 @@ export default function Page() {
                         <div className={styles.image_container}>
                             <div className={styles.image_wrapper}>
                                 <Image
-                                    src={"/images/medimate_cover.jpg"}
-                                    alt={"Medimate Cover Image"}
+                                    src="/images/medimate_cover.jpg"
+                                    alt="Medimate Cover Image"
                                     className={styles.image}
                                     fill
                                 />

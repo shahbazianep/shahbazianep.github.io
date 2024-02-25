@@ -135,8 +135,8 @@ export default function Page() {
                 <FadeInElement width={50}>
                     <div className={styles.project_highlight_image}>
                         <Image
-                            src={"images/nanika_demo.png"}
-                            alt="Demo image"
+                            src="images/nanika_demo.png"
+                            alt="Nanika demo image"
                             style={{ width: "100%", height: "auto" }}
                         />
                     </div>
