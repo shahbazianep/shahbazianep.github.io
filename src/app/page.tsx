@@ -1,17 +1,9 @@
 "use client";
 
-import Stars from "@/assets/Stars";
-import Chip from "@/assets/Chip";
 import styles from "@/app/app.module.css";
 import Link from "next/link";
 import { useContext } from "react";
 import Image from "next/image";
-import Me from "@/assets/images/me.jpg";
-import NANIKA_DEMO from "@/assets/images/nanika_demo2.png";
-import CONCERTO_DEMO from "@/assets/images/concerto_demo2.png";
-import MEDIMATE_DEMO from "@/assets/images/medimate7.jpg";
-import BRUINBOT_DEMO from "@/assets/images/bruinbot.jpg";
-import PORTFOLIO_DEMO from "@/assets/images/portfolio_cover.png";
 
 import {
     PiArrowCircleRightThin,
@@ -24,11 +16,12 @@ import {
     PiStackThin,
 } from "react-icons/pi";
 
+import Stars from "@/assets/Stars";
+import Chip from "@/assets/Chip";
 import Timeline from "@/assets/Timeline";
 import Socials from "@/assets/Socials";
 import FadeInElement from "@/assets/FadeInElement";
 import { DarkModeContext } from "@/contexts/DarkModeContext";
-import { InView } from "react-intersection-observer";
 
 // Python, CSS, HTML, React, Typescript, Javascript, C++, Java, Git, VBA, Microsoft Suite, Django, SQL, Linux, NodeJS, NextJS, Firebase, Docker, Figma
 const programmingTools: { [key: string]: number } = {
@@ -95,20 +88,18 @@ export default function Page() {
                                 borderRadius: "50%",
                             }}
                         >
-                            {Me ? (
-                                <Image
-                                    src={Me}
-                                    alt="hello"
-                                    style={{
-                                        borderRadius: "50%",
-                                        objectFit: "cover",
-                                        scale: 1.1,
-                                    }}
-                                    height={150}
-                                    width={150}
-                                    priority
-                                />
-                            ) : null}
+                            <Image
+                                src={"/images/me.jpg"}
+                                alt="hello"
+                                style={{
+                                    borderRadius: "50%",
+                                    objectFit: "cover",
+                                    scale: 1.1,
+                                }}
+                                height={150}
+                                width={150}
+                                priority
+                            />
                         </div>
 
                         <div>
@@ -256,14 +247,15 @@ export default function Page() {
                         </div>
                         <div className={styles.image_container}>
                             <div className={styles.image_wrapper}>
-                                {NANIKA_DEMO ? (
-                                    <Image
-                                        className={styles.image}
-                                        src={NANIKA_DEMO}
-                                        alt="Nanika Cover Image"
-                                        style={{ width: "100%" }}
-                                    />
-                                ) : null}
+                                <Image
+                                    className={styles.image}
+                                    src={"/images/nanika_cover.png"}
+                                    alt="Nanika Cover Image"
+                                    width={0}
+                                    height={0}
+                                    sizes="100vw"
+                                    style={{ width: "100%", height: "auto" }}
+                                />
                             </div>
                         </div>
                     </Link>
@@ -286,14 +278,15 @@ export default function Page() {
                         </div>
                         <div className={styles.image_container}>
                             <div className={styles.image_wrapper}>
-                                {CONCERTO_DEMO ? (
-                                    <Image
-                                        className={styles.image}
-                                        src={CONCERTO_DEMO}
-                                        alt="Concerto Cover Image"
-                                        style={{ width: "100%" }}
-                                    />
-                                ) : null}
+                                <Image
+                                    className={styles.image}
+                                    src={"/images/concerto_cover.png"}
+                                    alt="Concerto Cover Image"
+                                    width={0}
+                                    height={0}
+                                    sizes="100vw"
+                                    style={{ width: "100%", height: "auto" }}
+                                />
                             </div>
                         </div>
                     </Link>
@@ -304,13 +297,12 @@ export default function Page() {
                     <Link href="/bruinbot" className={styles.project_tile_s}>
                         <div className={styles.image_container}>
                             <div className={styles.image_wrapper}>
-                                {BRUINBOT_DEMO ? (
-                                    <Image
-                                        src={BRUINBOT_DEMO}
-                                        alt={"BruinBot Cover Image"}
-                                        className={styles.image}
-                                    />
-                                ) : null}
+                                <Image
+                                    src={"/images/bruinbot_cover.jpg"}
+                                    alt={"BruinBot Cover Image"}
+                                    className={styles.image}
+                                    fill
+                                />
                             </div>
                         </div>
                         <div className={styles.overlay}>
@@ -352,13 +344,15 @@ export default function Page() {
                         </div>
                         <div className={styles.image_container}>
                             <div className={styles.image_wrapper}>
-                                {PORTFOLIO_DEMO ? (
-                                    <Image
-                                        className={styles.image}
-                                        src={PORTFOLIO_DEMO}
-                                        alt="Portfolio Cover Image"
-                                    />
-                                ) : null}
+                                <Image
+                                    className={styles.image}
+                                    src={"/images/portfolio_cover.png"}
+                                    alt="Portfolio Cover Image"
+                                    width={0}
+                                    height={0}
+                                    sizes="100vw"
+                                    style={{ width: "100%", height: "auto" }}
+                                />
                             </div>
                         </div>
                     </Link>
@@ -367,13 +361,12 @@ export default function Page() {
                     <Link href="/medimate" className={styles.project_tile_s}>
                         <div className={styles.image_container}>
                             <div className={styles.image_wrapper}>
-                                {MEDIMATE_DEMO ? (
-                                    <Image
-                                        src={MEDIMATE_DEMO}
-                                        alt={"MediMate Cover Image"}
-                                        className={styles.image}
-                                    />
-                                ) : null}
+                                <Image
+                                    src={"/images/medimate_cover.jpg"}
+                                    alt={"Medimate Cover Image"}
+                                    className={styles.image}
+                                    fill
+                                />
                             </div>
                         </div>
 

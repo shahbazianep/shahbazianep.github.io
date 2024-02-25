@@ -1,10 +1,6 @@
 "use client";
 
 import Chip from "@/assets/Chip";
-import SYSTEM from "@/assets/images/medimate_system.png";
-import UNWRAP from "@/assets/images/medimate_unwrapping.png";
-import OCR from "@/assets/images/medimate_ocr.png";
-import SCHEDULE from "@/assets/images/medimate_schedule.png";
 import Image from "next/image";
 import styles from "@/app/app.module.css";
 import FadeInElement from "@/assets/FadeInElement";
@@ -132,7 +128,7 @@ export default function Page() {
                 <FadeInElement width={100}>
                     <div className={styles.project_demo_image}>
                         <Image
-                            src={SYSTEM}
+                            src={"/images/medimate_system.png"}
                             alt="test"
                             style={{ width: "100%", height: "auto" }}
                         />
@@ -143,7 +139,7 @@ export default function Page() {
                 <FadeInElement width={50}>
                     <div className={styles.project_highlight_image}>
                         <Image
-                            src={UNWRAP}
+                            src={"/images/medimate_unwrap.png"}
                             alt="test"
                             style={{ width: "100%", height: "auto" }}
                         />
@@ -152,7 +148,7 @@ export default function Page() {
                 <FadeInElement width={25}>
                     <div className={styles.project_highlight_image}>
                         <Image
-                            src={OCR}
+                            src={"/images/medimate_ocr.png"}
                             alt="test"
                             style={{ width: "100%", height: "auto" }}
                         />
@@ -161,7 +157,7 @@ export default function Page() {
                 <FadeInElement width={25}>
                     <div className={styles.project_highlight_image}>
                         <Image
-                            src={SCHEDULE}
+                            src={"/images/medimate_schedule.png"}
                             alt="test"
                             style={{ width: "100%", height: "auto" }}
                         />

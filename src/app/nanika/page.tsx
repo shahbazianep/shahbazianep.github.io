@@ -2,12 +2,9 @@
 
 import ColorBlock from "@/assets/ColorBlock";
 import Chip from "@/assets/Chip";
-import DEMO3 from "@/assets/images/nanika_demo3.png";
 import Image from "next/image";
 import styles from "@/app/app.module.css";
 import FadeInElement from "@/assets/FadeInElement";
-
-import Link from "next/link";
 
 export default function Page() {
     return (
@@ -138,8 +135,8 @@ export default function Page() {
                 <FadeInElement width={50}>
                     <div className={styles.project_highlight_image}>
                         <Image
-                            src={DEMO3}
-                            alt="test"
+                            src={"images/nanika_demo.png"}
+                            alt="Demo image"
                             style={{ width: "100%", height: "auto" }}
                         />
                     </div>
@@ -160,6 +157,7 @@ export default function Page() {
                                 autoPlay
                                 loop
                                 muted
+                                playsInline
                             >
                                 <source
                                     src="/nanika_recording.mp4"

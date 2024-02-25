@@ -2,8 +2,6 @@
 
 import ColorBlock from "@/assets/ColorBlock";
 import Chip from "@/assets/Chip";
-import Test from "@/assets/images/concerto_demo2.png";
-import Image from "next/image";
 import styles from "@/app/app.module.css";
 import FadeInElement from "@/assets/FadeInElement";
 import Link from "next/link";

@@ -2,14 +2,9 @@
 
 import ColorBlock from "@/assets/ColorBlock";
 import Chip from "@/assets/Chip";
-import Test from "@/assets/images/concerto_demo2.png";
-import LOADING from "@/assets/images/concerto_loading.png";
-import HOME from "@/assets/images/concerto_home.png";
-import RESULTS from "@/assets/images/concerto_results.png";
 import Image from "next/image";
 import styles from "@/app/app.module.css";
 import FadeInElement from "@/assets/FadeInElement";
-import Link from "next/link";
 
 export default function Page() {
     return (
@@ -144,7 +139,7 @@ export default function Page() {
                 <FadeInElement width={100}>
                     <div className={styles.project_demo_image}>
                         <Image
-                            src={HOME}
+                            src={"/images/concerto_home.png"}
                             alt="test"
                             style={{ width: "100%", height: "auto" }}
                         />
@@ -155,7 +150,7 @@ export default function Page() {
                 <FadeInElement width={100}>
                     <div className={styles.project_highlight_image}>
                         <Image
-                            src={LOADING}
+                            src={"/images/concerto_loading.png"}
                             alt="test"
                             style={{ width: "100%", height: "auto" }}
                         />
@@ -166,7 +161,7 @@ export default function Page() {
                 <FadeInElement width={100}>
                     <div className={styles.project_highlight_image}>
                         <Image
-                            src={RESULTS}
+                            src={"/images/concerto_results.png"}
                             alt="test"
                             style={{ width: "100%", height: "auto" }}
                         />
