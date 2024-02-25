@@ -23,12 +23,6 @@ body {
     --image-overlay: rgba(27, 32, 36, 0.5);
 }
 
-/* body {
-    --color-background: #dde4ff;
-    --color-foreground: #f8faff;
-    --color-text: #1d1014;
-} */
-
 a {
     color: inherit;
     text-decoration: none;

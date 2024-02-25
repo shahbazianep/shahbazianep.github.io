@@ -133,11 +133,8 @@
     padding-inline-end: 10px;
     font-size: 16px;
 }
-/* .timelineElement .elementContainer:hover {
-    border-color: #9077e1;
-} */
+
 .timelineElement .circle {
-    /* border: 3px solid #9077e1; */
     background-color: var(--color-text);
     border-radius: 50%;
     position: absolute;
@@ -146,39 +143,8 @@
     width: 16px;
     height: 16px;
     z-index: 1;
-    /* animation: cycleCircles 16s infinite; */
-}
-@keyframes cycleCircles {
-    0%,
-    15% {
-        background-color: var(--color-text);
-    }
-    25%,
-    40% {
-        background-color: #9077e1;
-    }
-    50%,
-    65% {
-        background-color: var(--color-text);
-    }
-}
-.timelineElement:nth-child(2) .circle {
-    animation-delay: 0s;
-}
-.timelineElement:nth-child(3) .circle {
-    animation-delay: 4s;
-}
-.timelineElement:nth-child(4) .circle {
-    animation-delay: 8s;
-}
-.timelineElement:nth-child(5) .circle {
-    animation-delay: 12s;
 }
 
-/* .timelineElement .elementContainer:hover .circle {
-    background-color: #9077e1 !important;
-    animation-play-state: paused;
-} */
 .timelineElement:nth-child(2n) .circle {
     left: calc(100% - 7px);
 }
@@ -195,38 +161,7 @@
     font-size: 16px;
     opacity: 0;
     transition: opacity 0.3s ease;
-    /* animation: cycleDates 16s infinite; */
 }
-@keyframes cycleDates {
-    0%,
-    15% {
-        opacity: 0;
-    }
-    25%,
-    40% {
-        opacity: 1;
-    }
-    50%,
-    65% {
-        opacity: 0;
-    }
-}
-.timelineElement:nth-child(2) .date {
-    animation-delay: 0s;
-}
-.timelineElement:nth-child(3) .date {
-    animation-delay: 4s;
-}
-.timelineElement:nth-child(4) .date {
-    animation-delay: 8s;
-}
-.timelineElement:nth-child(5) .date {
-    animation-delay: 12s;
-}
-/* .timelineElement .elementContainer:hover .date {
-    opacity: 1 !important;
-    animation-play-state: paused;
-} */
 .timelineElement:nth-child(2n) .date {
     padding-right: 20px;
     padding-left: 0px;
@@ -382,6 +317,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 .project_tile_s .image_wrapper {
     height: 100%;
@@ -946,6 +882,9 @@
         bottom: 32px;
         left: calc(50%-100px);
     }
+    .skills_tile {
+        height: 100%;
+    }
     .width60,
     .width40,
     .width25 .width50 {
@@ -1006,8 +945,9 @@
         z-index: 2;
         right: 32px;
         bottom: 32px;
-        background-color: var(--color-text);
-        color: #9077e1;
+        background-color: var(--color-background);
+        color: var(--color-text);
+        box-shadow: 0px 0px 10px -2px var(--color-text);
     }
     .pulse {
         display: none;
