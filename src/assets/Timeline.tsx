@@ -1,7 +1,6 @@
 import { timelineData } from "@/assets/data";
 import styles from "@/app/app.module.css";
-import { useContext, useEffect } from "react";
-import { DarkModeContext } from "@/contexts/DarkModeContext";
+import { useEffect } from "react";
 import anime from "animejs";
 
 type TimelineData = {
@@ -26,26 +25,6 @@ function convertDate(startDate: Date, endDate: Date) {
         endDate.getFullYear();
     return tempDate;
 }
-// const fadeCircles = anime({
-//     targets: "#circle",
-//     backgroundColor: [
-//         { value: "#9077e1", duration: 2000 },
-//         { value: "#fff", duration: 4000 },
-//     ],
-//     loop: true,
-//     delay: anime.stagger(3200),
-//     easing: "easeInOutExpo",
-// });
-// const fadeDates = anime({
-//     targets: "#date",
-//     opacity: [
-//         { value: 1, duration: 2000 },
-//         { value: 0, duration: 4000 },
-//     ],
-//     loop: true,
-//     delay: anime.stagger(3200),
-//     easing: "easeInOutExpo",
-// });
 
 function TimelineComponent({ data }: { data: TimelineData }) {
     useEffect(() => {
@@ -75,19 +54,7 @@ function TimelineComponent({ data }: { data: TimelineData }) {
 
     return (
         <div className={styles.timelineElement}>
-            <div
-                className={styles.elementContainer}
-                // onMouseEnter={() => {
-                //     // fadeCircles.restart();
-                //     // fadeDates.restart();
-                //     fadeCircles.pause();
-                //     fadeDates.pause();
-                // }}
-                // onMouseLeave={() => {
-                //     fadeCircles.play();
-                //     fadeDates.play();
-                // }}
-            >
+            <div className={styles.elementContainer}>
                 <div style={{ fontFamily: "WorkSans-SemiBold" }}>
                     {data.company}
                     {data.subcompany ? " | " + data.subcompany : ""}
@@ -100,7 +67,6 @@ function TimelineComponent({ data }: { data: TimelineData }) {
                 >
                     {data.role}
                 </div>
-                {/* <div style={{ fontSize: 16 }}>{data.description}</div> */}
                 <div className={styles.date} id="date">
                     {convertDate(data.startDate, data.endDate)}
                 </div>

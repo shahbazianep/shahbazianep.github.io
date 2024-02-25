@@ -2,16 +2,11 @@ import styles from "@/app/app.module.css";
 
 export default function ColorBlock({ colors }: { colors: Array<string> }) {
     function getContrastColor(bgColor: string) {
-        // Convert the hex color to RGB
         const rgb = parseInt(bgColor.slice(1), 16);
         const r = (rgb >> 16) & 0xff;
         const g = (rgb >> 8) & 0xff;
         const b = (rgb >> 0) & 0xff;
-
-        // Calculate the relative luminance (per ITU-R BT.709)
         const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-
-        // Use white text for dark backgrounds and black text for light backgrounds
         return luminance > 128 ? "#0d1014" : "#ffffff";
     }
 
@@ -20,7 +15,7 @@ export default function ColorBlock({ colors }: { colors: Array<string> }) {
     return (
         <div
             style={{
-                flexDirection: "column", // Change to column to stack rows
+                flexDirection: "column",
                 width: "100%",
                 height: "100%",
                 justifyContent: "space-evenly",

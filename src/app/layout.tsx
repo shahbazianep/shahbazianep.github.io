@@ -4,8 +4,7 @@ import Link from "next/link";
 import styles from "@/app/app.module.css";
 import "@/app/globals.css";
 import { PiSunThin } from "react-icons/pi";
-import { useContext, useEffect, useState } from "react";
-import anime from "animejs";
+import { useEffect, useState } from "react";
 import { DarkModeContext } from "@/contexts/DarkModeContext";
 
 export default function Layout({ children }: { children: React.ReactNode }) {

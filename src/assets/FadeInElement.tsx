@@ -1,7 +1,5 @@
-// FadeInElement.tsx
-import { useState, useEffect, useRef } from "react";
 import { InView } from "react-intersection-observer";
-import styles from "@/app/app.module.css"; // Create a CSS module for styling
+import styles from "@/app/app.module.css";
 
 interface FadeInElementProps {
     children: React.ReactNode;
