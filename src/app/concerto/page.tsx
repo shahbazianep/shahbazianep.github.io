@@ -141,6 +141,9 @@ export default function Page() {
                         <Image
                             src="/images/concerto_home.png"
                             alt="Concerto home screen"
+                            width={0}
+                            height={0}
+                            sizes="100vw"
                             style={{ width: "100%", height: "auto" }}
                         />
                     </div>
@@ -152,6 +155,9 @@ export default function Page() {
                         <Image
                             src="/images/concerto_loading.png"
                             alt="Concerto loading screen"
+                            width={0}
+                            height={0}
+                            sizes="100vw"
                             style={{ width: "100%", height: "auto" }}
                         />
                     </div>
@@ -163,6 +169,9 @@ export default function Page() {
                         <Image
                             src="/images/concerto_results.png"
                             alt="Concerto results screen"
+                            width={0}
+                            height={0}
+                            sizes="100vw"
                             style={{ width: "100%", height: "auto" }}
                         />
                     </div>

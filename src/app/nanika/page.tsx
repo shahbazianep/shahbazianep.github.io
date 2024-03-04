@@ -95,13 +95,13 @@ export default function Page() {
                             </div>
                         </div>
                         <div className={styles.project_division}>
-                            <div className={styles.project_details_tile}>
-                                <div>Results</div>
+                            <div className={styles.project_goals_tile}>
+                                <div>Goals</div>
                                 <div className={styles.list}>
                                     {[
-                                        "95% faster search times",
-                                        "Added enhanced filters that allow for greater specificity and more filter options",
-                                        "Designed and implemented a smooth, simple UI that mimics the Spotify user experience",
+                                        "Provide private journaling and mood tracking capabilities",
+                                        "Improve general emotional conditions by enabling the principle of emotional contagion",
+                                        "Allow for anonymized social interaction via clusters",
                                     ].map((goal, index) => {
                                         return (
                                             <div key={index}>
@@ -111,13 +111,13 @@ export default function Page() {
                                     })}
                                 </div>
                             </div>
-                            <div className={styles.project_goals_tile}>
-                                <div>Goals</div>
+                            <div className={styles.project_details_tile}>
+                                <div>Results</div>
                                 <div className={styles.list}>
                                     {[
-                                        "Provide private journaling and mood tracking capabilities",
-                                        "Improve general emotional conditions by enabling the principle of emotional contagion",
-                                        "Allow for anonymized social interaction via clusters",
+                                        "Fully secure authentication and data storage",
+                                        "Detailed and secure journaling capabilities",
+                                        "An anonymous social aspect that enables the principle of emotional contagion by allowing users to see the emotions of others they share clusters with",
                                     ].map((goal, index) => {
                                         return (
                                             <div key={index}>
@@ -137,6 +137,9 @@ export default function Page() {
                         <Image
                             src="images/nanika_demo.png"
                             alt="Nanika demo image"
+                            width={0}
+                            height={0}
+                            sizes="100vw"
                             style={{ width: "100%", height: "auto" }}
                         />
                     </div>

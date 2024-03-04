@@ -100,6 +100,7 @@
     background-color: var(--color-foreground);
     height: 80vh;
     max-height: 750px;
+    min-height: 500px;
     padding: 32px;
     font-family: WorkSans-Regular;
     color: var(--color-text);
@@ -372,6 +373,7 @@
     display: flex;
     flex-direction: column;
     cursor: pointer;
+    min-height: 200px;
 }
 .project_tile_s .image {
     height: 100%;
@@ -667,7 +669,6 @@
 
 .project_highlight_image {
     width: auto;
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-self: center;

@@ -130,6 +130,9 @@ export default function Page() {
                         <Image
                             src="/images/medimate_system.png"
                             alt="Medimate system design"
+                            width={0}
+                            height={0}
+                            sizes="100vw"
                             style={{ width: "100%", height: "auto" }}
                         />
                     </div>
@@ -141,6 +144,9 @@ export default function Page() {
                         <Image
                             src="/images/medimate_unwrapping.png"
                             alt="Medimate unwrapping results"
+                            width={0}
+                            height={0}
+                            sizes="50vw"
                             style={{ width: "100%", height: "auto" }}
                         />
                     </div>
@@ -150,6 +156,9 @@ export default function Page() {
                         <Image
                             src="/images/medimate_ocr.png"
                             alt="Medimate OCR results"
+                            width={0}
+                            height={0}
+                            sizes="25vw"
                             style={{ width: "100%", height: "auto" }}
                         />
                     </div>
@@ -159,6 +168,9 @@ export default function Page() {
                         <Image
                             src="/images/medimate_schedule.png"
                             alt="Medimate scheduling results"
+                            width={0}
+                            height={0}
+                            sizes="25vw"
                             style={{ width: "100%", height: "auto" }}
                         />
                     </div>
