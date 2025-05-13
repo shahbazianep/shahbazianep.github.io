@@ -4,7 +4,6 @@ import Chip from "@/assets/Chip";
 import styles from "@/app/app.module.css";
 import FadeInElement from "@/assets/FadeInElement";
 import Image from "next/image";
-import Folder from "@/assets/Folder";
 
 export default function Page() {
     return (
