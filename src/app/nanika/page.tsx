@@ -47,11 +47,11 @@ export default function Page() {
                             mental health by leveraging the principle of
                             emotional contagion. It allows users to securely log
                             and track their emotions over time while providing
-                            an anonymous, summarized view into a their friends'
-                            emotional states. Users can join and create clusters
-                            which enable the emotional contagion, helping bias
-                            their moods towards more positive emotions over
-                            time.
+                            an anonymous, summarized view into a their
+                            friends&apos; emotional states. Users can join and
+                            create clusters which enable the emotional
+                            contagion, helping bias their moods towards more
+                            positive emotions over time.
                         </div>
                         <div className={styles.inverse_corner}>
                             <div className={styles.button}>
