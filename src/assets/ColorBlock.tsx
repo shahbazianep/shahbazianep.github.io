@@ -15,10 +15,10 @@ export default function ColorBlock({ colors }: { colors: Array<string> }) {
     return (
         <div
             style={{
+                display: "flex",
                 flexDirection: "column",
                 width: "100%",
                 height: "100%",
-                justifyContent: "space-evenly",
                 borderRadius: 12,
                 overflow: "hidden",
                 minHeight: rows * 40,
@@ -27,7 +27,7 @@ export default function ColorBlock({ colors }: { colors: Array<string> }) {
             <div
                 style={{
                     display: "flex",
-                    height: colors.length % 3 == 0 ? "33%" : "50%",
+                    height: colors.length % 3 == 0 ? "33.33%" : "50%",
                 }}
             >
                 {colors
@@ -43,6 +43,8 @@ export default function ColorBlock({ colors }: { colors: Array<string> }) {
                             style={{
                                 backgroundColor: color,
                                 color: getContrastColor(color),
+                                width: "100%",
+                                textAlign: "center",
                             }}
                             className={styles.color_block}
                         >
@@ -53,7 +55,7 @@ export default function ColorBlock({ colors }: { colors: Array<string> }) {
             <div
                 style={{
                     display: "flex",
-                    height: colors.length % 3 == 0 ? "33%" : "50%",
+                    height: colors.length % 3 == 0 ? "33.33%" : "50%",
                 }}
             >
                 {colors
@@ -72,6 +74,8 @@ export default function ColorBlock({ colors }: { colors: Array<string> }) {
                             style={{
                                 backgroundColor: color,
                                 color: getContrastColor(color),
+                                width: "100%",
+                                textAlign: "center",
                             }}
                             className={styles.color_block}
                         >
@@ -83,7 +87,7 @@ export default function ColorBlock({ colors }: { colors: Array<string> }) {
                 <div
                     style={{
                         display: "flex",
-                        height: colors.length % 3 == 0 ? "33%" : "0%",
+                        height: colors.length % 3 == 0 ? "33.33%" : "0%",
                     }}
                 >
                     {colors
@@ -97,6 +101,8 @@ export default function ColorBlock({ colors }: { colors: Array<string> }) {
                                 style={{
                                     backgroundColor: color,
                                     color: getContrastColor(color),
+                                    width: "100%",
+                                    textAlign: "center",
                                 }}
                                 className={styles.color_block}
                             >

@@ -8,7 +8,7 @@ interface FadeInElementProps {
 
 const FadeInElement: React.FC<FadeInElementProps> = ({ children, width }) => {
     return (
-        <InView triggerOnce threshold={0}>
+        <InView triggerOnce threshold={0.1}>
             {({ inView, ref, entry }) => (
                 <div
                     ref={ref}

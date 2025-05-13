@@ -3,7 +3,6 @@
 import Link from "next/link";
 import styles from "@/app/app.module.css";
 import "@/app/globals.css";
-import { PiSunThin } from "react-icons/pi";
 import { useEffect, useState } from "react";
 import { DarkModeContext } from "@/contexts/DarkModeContext";
 
@@ -17,7 +16,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         );
         document.documentElement.style.setProperty(
             "--color-foreground",
-            darkMode ? "#1b2024" : "#f8faff"
+            darkMode ? "#1F2026" : "#f8faff"
+        );
+        document.documentElement.style.setProperty(
+            "--color-foreground2",
+            darkMode ? "#2C2C3B" : "#f8faff"
         );
         document.documentElement.style.setProperty(
             "--color-text",
@@ -25,12 +28,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         );
         document.documentElement.style.setProperty(
             "--color-accent",
-            darkMode ? "#bbb" : "#888"
+            darkMode ? "#d0ccdc" : "#d0ccdc"
         );
         document.documentElement.style.setProperty(
             "--gradient",
             darkMode
-                ? "linear-gradient(90deg,rgba(27, 32, 36, 1) 0%,rgba(37, 31, 57, 1) 100%)"
+                ? "linear-gradient(90deg,rgba(37, 31, 57, 1) 0%,rgba(27, 32, 36, 1) 100%)"
                 : "linear-gradient(90deg, rgba(187, 197, 253, 1)0%,rgba(242,244,255, 1) 100%)"
         );
         document.documentElement.style.setProperty(
@@ -43,58 +46,22 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <html lang="en">
             <body>
                 <div className={styles.background}>
-                    <div className={styles.header_container}>
-                        <div
-                            className={styles.sun_button}
-                            onMouseDown={() => {
-                                setDarkMode(!darkMode);
-                            }}
-                        >
-                            <div className={styles.pulse}></div>
-                            <PiSunThin size={40} />
-                        </div>
-                        <div
-                            style={{
-                                display: "flex",
-                                flexDirection: "row",
-                                alignItems: "center",
-                                justifyContent: "center",
-                            }}
-                        >
-                            <Link href="/">
-                                <div className={styles.header}>
-                                    <div>
-                                        <div className={styles.header_label}>
-                                            01
-                                        </div>
-                                        Home
-                                    </div>
-                                </div>
-                            </Link>
-
-                            <Link href="/#projects">
-                                <div className={styles.header}>
-                                    <div>
-                                        <div className={styles.header_label}>
-                                            02
-                                        </div>
+                    <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
+                        <div className={styles.row}>
+                            <div className={styles.header_container}>
+                                <Link href="/">
+                                    <div className={styles.header}>Home</div>
+                                </Link>
+                                <Link href="/#projects">
+                                    <div className={styles.header}>
                                         Projects
                                     </div>
-                                </div>
-                            </Link>
-                            <Link href="/#contact">
-                                <div className={styles.header}>
-                                    <div>
-                                        <div className={styles.header_label}>
-                                            03
-                                        </div>
-                                        Contact
-                                    </div>
-                                </div>
-                            </Link>
+                                </Link>
+                                <Link href="/#contact">
+                                    <div className={styles.header}>Contact</div>
+                                </Link>
+                            </div>
                         </div>
-                    </div>
-                    <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
                         <div
                             style={{
                                 flex: 1,

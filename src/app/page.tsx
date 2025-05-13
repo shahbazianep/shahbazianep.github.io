@@ -8,57 +8,62 @@ import Image from "next/image";
 import {
     PiArrowCircleRightThin,
     PiArrowRightThin,
-    PiChatsCircleThin,
     PiCircleHalfTiltThin,
+    PiCodeThin,
+    PiCubeTransparentThin,
     PiGitMergeThin,
-    PiGlobeThin,
-    PiPottedPlantThin,
     PiStackThin,
 } from "react-icons/pi";
 
-import Stars from "@/assets/Stars";
 import Chip from "@/assets/Chip";
 import Timeline from "@/assets/Timeline";
-import Socials from "@/assets/Socials";
 import FadeInElement from "@/assets/FadeInElement";
 import { DarkModeContext } from "@/contexts/DarkModeContext";
+import { TextLoop } from "@/assets/TextLoop";
+import { BiLogoGithub } from "react-icons/bi";
+import { SiLeetcode } from "react-icons/si";
+import { FaLinkedinIn, FaSpotify } from "react-icons/fa";
 
 // Python, CSS, HTML, React, Typescript, Javascript, C++, Java, Git, VBA, Microsoft Suite, Django, SQL, Linux, NodeJS, NextJS, Firebase, Docker, Figma
-const programmingTools: { [key: string]: number } = {
-    Python: 5,
-    JavaScript: 5,
-    TypeScript: 3,
-    "CSS/3": 5,
-    "HTML/5": 5,
-    "C++": 4,
-    VisualBasic: 4,
-};
-
-const technologyTools: { [key: string]: number } = {
-    React: 5,
-    Django: 2,
-    SQL: 3,
-    "Node.js": 4,
-    "Next.js": 3.5,
-    Firebase: 4.5,
-};
-
-const developmentTools: { [key: string]: number } = {
-    "Git/Gitlab": 4,
-    "Microsoft Suite": 5,
-    Linux: 3.5,
-    Docker: 2.5,
-    Figma: 4,
-};
-
-const hobbyTools: { [key: string]: number } = {
-    Badminton: 4.5,
-    "Succulent Care": 2,
-    "Video Games": 3,
-    Reading: 4.5,
-    Baking: 5,
-    Anime: 2.5,
-};
+const programmingTools: string[] = [
+    "Python",
+    "JavaScript",
+    "TypeScript",
+    "CSS/3",
+    "HTML/5",
+    "C++",
+    "VisualBasic",
+];
+const technologyTools: string[] = [
+    "React",
+    "Next.js",
+    "Node.js",
+    "SQL",
+    "Firebase",
+    "MongoDB",
+    "Flask",
+    "Django",
+];
+const developmentTools: string[] = [
+    "Git",
+    "Github",
+    "Gitlab",
+    "Github CI/CD",
+    "Figma",
+    "Linux",
+    "Docker",
+];
+const libraryTools: string[] = [
+    "D3.js",
+    "Three.js",
+    "Pandas",
+    "Tensorflow",
+    "Matplotlib",
+    "BeautifulSoup4",
+    "Scikit-learn",
+    "OpenCV",
+    "Numpy",
+];
 
 export default function Page() {
     const { darkMode, setDarkMode } = useContext(DarkModeContext);
@@ -66,163 +71,227 @@ export default function Page() {
     return (
         <div
             style={{
-                padding: 32,
                 width: "100%",
                 height: "100%",
                 display: "flex",
                 flexDirection: "column",
+                alignItems: "center",
                 marginLeft: "auto",
                 marginRight: "auto",
-                maxWidth: 1600,
+                marginBottom: 16,
             }}
         >
             <div className={styles.row}>
-                <FadeInElement width={60}>
+                <FadeInElement width={75}>
                     <div className={styles.landing_tile}>
-                        <div
-                            style={{
-                                height: 150,
-                                width: 150,
-                                overflow: "hidden",
-                                marginBottom: 10,
-                                borderRadius: "50%",
-                            }}
-                        >
+                        <div className={styles.content}>
+                            <div
+                                style={{
+                                    fontFamily: "WorkSans-Regular",
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    marginBottom: "20px",
+                                }}
+                            >
+                                <span className={styles.intro}>My name is</span>
+                                <span className={styles.name}>
+                                    Ethan Shahbazian
+                                </span>
+                            </div>
+                            <div className={styles.subtext}>
+                                <span>I specialize in blending</span>
+                                <TextLoop interval={3}>
+                                    <span>innovation</span>
+                                    <span>performance</span>
+                                    <span>design</span>
+                                    <span>experiences</span>
+                                </TextLoop>
+                            </div>
+                        </div>
+                    </div>
+                </FadeInElement>
+                <div className={styles.hidden}>
+                    <FadeInElement width={80}>
+                        <div className={styles.portrait_tile}>
                             <Image
                                 src="/images/me.jpg"
                                 alt="Personal picture"
                                 style={{
-                                    borderRadius: "50%",
                                     objectFit: "cover",
-                                    scale: 1.1,
                                 }}
-                                height={150}
-                                width={150}
+                                height={1000}
+                                width={400}
                                 priority
                             />
                         </div>
+                    </FadeInElement>
+                </div>
+            </div>
+            <div className={styles.socials_row}>
+                <FadeInElement width={100}>
+                    <div className={styles.social_container}>
+                        <Link
+                            href={"https://github.com/shahbazianep"}
+                            passHref={true}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ width: "100%" }}
+                        >
+                            <div className={styles.social_icon_wrapper}>
+                                <BiLogoGithub
+                                    size={35}
+                                    className={styles.social_icon}
+                                />
+                                Github
+                            </div>
+                        </Link>
+                        <Link
+                            href={
+                                "https://www.linkedin.com/in/ethanshahbazian/"
+                            }
+                            passHref={true}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ width: "100%" }}
+                        >
+                            <div className={styles.social_icon_wrapper}>
+                                <FaLinkedinIn
+                                    size={26}
+                                    className={styles.social_icon}
+                                />
+                                LinkedIn
+                            </div>
+                        </Link>
+                        <Link
+                            href={"https://leetcode.com/u/eshah22/"}
+                            passHref={true}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ width: "100%" }}
+                        >
+                            <div className={styles.social_icon_wrapper}>
+                                <SiLeetcode
+                                    size={25}
+                                    className={styles.social_icon}
+                                />
+                                Leetcode
+                            </div>
+                        </Link>
 
-                        <div>
-                            My name is Ethan Shahbazian, a software engineer
-                            from the San Francisco Bay Area.
-                        </div>
-                        <div className={styles.subtext}>
-                            I specialize in creating memorable, clean user
-                            experiences and developing efficient, innovative
-                            solutions to a variety of technical problems.
-                        </div>
-                        <div className={styles.social_container}>
-                            <Socials />
-                        </div>
-                    </div>
-                </FadeInElement>
-                <FadeInElement width={40}>
-                    <div className={styles.timeline_tile}>
-                        <Timeline />
+                        <Link
+                            href={"https://open.spotify.com/user/eshah22"}
+                            passHref={true}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ width: "100%" }}
+                        >
+                            <div className={styles.social_icon_wrapper}>
+                                <FaSpotify
+                                    size={27}
+                                    className={styles.social_icon}
+                                />
+                                Spotify
+                            </div>
+                        </Link>
                     </div>
                 </FadeInElement>
             </div>
 
             <div className={styles.skills_row}>
-                <div className={styles.division}>
-                    <FadeInElement width={50}>
-                        <div className={styles.skills_tile}>
+                <FadeInElement width={25}>
+                    <div className={styles.timeline_tile}>
+                        <div>Experience</div>
+                        <Timeline />
+                    </div>
+                </FadeInElement>
+                <FadeInElement width={75}>
+                    <div className={styles.skills_container}>
+                        <div
+                            className={styles.skills_tile}
+                            style={{
+                                background:
+                                    "radial-gradient(at 36.29310797263587% 5.2348996702189945%, #3a3a4b 0px, transparent 50%), radial-gradient(at 43.892653719189354% 78.50111890959259%, #20202c 0px, transparent 50%), radial-gradient(at 79.42756670075887% 40.1342285292794%, #2b2b36 0px, transparent 50%) #2C2C3B",
+                            }}
+                        >
                             <div className={styles.skills_title}>
-                                <PiGlobeThin
+                                <PiCodeThin
                                     size={60}
                                     className={styles.skills_icon}
                                 />
-                                <div style={{ marginBottom: 10 }}>
-                                    Languages
-                                </div>
+                                Languages
                             </div>
-                            {Object.keys(programmingTools).map(
-                                (e: string, i: number) => {
-                                    return (
-                                        <Stars
-                                            key={i}
-                                            rating={programmingTools[e]}
-                                        >
-                                            {e}
-                                        </Stars>
-                                    );
-                                }
-                            )}
+                            <div className={styles.chip_container}>
+                                {programmingTools.map(
+                                    (e: string, i: number) => {
+                                        return <Chip key={i}>{e}</Chip>;
+                                    }
+                                )}
+                            </div>
                         </div>
-                    </FadeInElement>
-                    <FadeInElement width={50}>
-                        <div className={styles.skills_tile}>
+                        <div
+                            className={styles.skills_tile}
+                            style={{
+                                background:
+                                    "radial-gradient(at 63.03225041421293% 10.492170363731299%, #3a3a4b 0px, transparent 50%), radial-gradient(at 25.667817160324997% 46.51006745545389%, #20202c 0px, transparent 50%), radial-gradient(at 72.46131643308485% 86.55481018476038%, #2b2b36 0px, transparent 50%) #2C2C3B",
+                            }}
+                        >
                             <div className={styles.skills_title}>
                                 <PiStackThin
                                     size={60}
                                     className={styles.skills_icon}
                                 />
-                                <div style={{ marginBottom: 10 }}>
-                                    Technologies
-                                </div>
+                                Technologies
                             </div>
-                            {Object.keys(technologyTools).map(
-                                (e: string, i: number) => {
-                                    return (
-                                        <Stars
-                                            key={i}
-                                            rating={technologyTools[e]}
-                                        >
-                                            {e}
-                                        </Stars>
-                                    );
-                                }
-                            )}
+                            <div className={styles.chip_container}>
+                                {technologyTools.map((e: string, i: number) => {
+                                    return <Chip key={i}>{e}</Chip>;
+                                })}
+                            </div>
                         </div>
-                    </FadeInElement>
-                </div>
-                <div className={styles.division}>
-                    <FadeInElement width={50}>
-                        <div className={styles.skills_tile}>
+                        <div
+                            className={styles.skills_tile}
+                            style={{
+                                background:
+                                    "radial-gradient(at 5.824558822102019% 94.72035828319439%, #49495f 0px, transparent 50%), radial-gradient(at 66.97275561612955% 62.50559318252324%, #1e1e2a 0px, transparent 50%), radial-gradient(at 83.29770573835555% 13.624161415185437%, #2a2a32 0px, transparent 50%) #2c2c3b",
+                            }}
+                        >
                             <div className={styles.skills_title}>
                                 <PiGitMergeThin
                                     size={60}
                                     className={styles.skills_icon}
                                 />
-                                <div style={{ marginBottom: 10 }}>
-                                    Dev Tools{" "}
-                                </div>
+                                Dev Tools
                             </div>
-                            {Object.keys(developmentTools).map(
-                                (e: string, i: number) => {
-                                    return (
-                                        <Stars
-                                            key={i}
-                                            rating={developmentTools[e]}
-                                        >
-                                            {e}
-                                        </Stars>
-                                    );
-                                }
-                            )}
+                            <div className={styles.chip_container}>
+                                {developmentTools.map(
+                                    (e: string, i: number) => {
+                                        return <Chip key={i}>{e}</Chip>;
+                                    }
+                                )}
+                            </div>
                         </div>
-                    </FadeInElement>
-                    <FadeInElement width={50}>
-                        <div className={styles.skills_tile}>
+                        <div
+                            className={styles.skills_tile}
+                            style={{
+                                background:
+                                    "radial-gradient(at 67.32458643772925% 47.74049251138231%, #434356 0px, transparent 50%), radial-gradient(at 62.6100534282933% 24.80984374180736%, #1e1e2a 0px, transparent 50%), radial-gradient(at 28.6935622260824% 76.26398244426821%, #2a2a32 0px, transparent 50%) #2c2c3b",
+                            }}
+                        >
                             <div className={styles.skills_title}>
-                                <PiPottedPlantThin
+                                <PiCubeTransparentThin
                                     size={60}
                                     className={styles.skills_icon}
                                 />
-                                <div style={{ marginBottom: 10 }}>Hobbies</div>
+                                Libraries
                             </div>
-                            {Object.keys(hobbyTools).map(
-                                (e: string, i: number) => {
-                                    return (
-                                        <Stars key={i} rating={hobbyTools[e]}>
-                                            {e}
-                                        </Stars>
-                                    );
-                                }
-                            )}
+                            <div className={styles.chip_container}>
+                                {libraryTools.map((e: string, i: number) => {
+                                    return <Chip key={i}>{e}</Chip>;
+                                })}
+                            </div>
                         </div>
-                    </FadeInElement>
-                </div>
+                    </div>
+                </FadeInElement>
             </div>
             <div className={styles.row} id="projects">
                 <FadeInElement width={50}>
@@ -393,27 +462,7 @@ export default function Page() {
                 </FadeInElement>
             </div>
             <div className={styles.row} id="contact">
-                <FadeInElement width={50}>
-                    <div className={styles.more_tile}>
-                        <PiChatsCircleThin size={60} className={styles.icon} />
-                        <div>
-                            Interested in more?
-                            <div
-                                style={{
-                                    fontSize: 16,
-                                    fontFamily: "WorkSans-Regular",
-                                    marginTop: 10,
-                                    color: "#bbb",
-                                }}
-                            >
-                                Learn more about my experiences, skills, and
-                                interests.
-                            </div>
-                        </div>
-                        <Socials />
-                    </div>
-                </FadeInElement>
-                <FadeInElement width={50}>
+                <FadeInElement width={100}>
                     <div className={styles.more_tile_projects}>
                         <div className={styles.container}>
                             <div className={styles.title}>
@@ -430,15 +479,24 @@ export default function Page() {
                                     "bruinbot",
                                     "portfolio",
                                     "medimate",
+                                    "stockml",
+                                    "prolol",
+                                    "plantz",
                                 ].map((project, index) => {
                                     return (
-                                        <Link href={`/${project}`} key={index}>
+                                        <Link
+                                            href={`/${project}`}
+                                            key={index}
+                                            className={styles.project_link}
+                                        >
                                             <div
                                                 style={{
                                                     borderTop:
-                                                        index == 0
+                                                        index == 0 || index == 5
                                                             ? "none"
                                                             : "1px solid #bbb",
+                                                    height: "100%",
+                                                    width: "100%",
                                                 }}
                                                 className={styles.project_list}
                                             >
@@ -452,6 +510,44 @@ export default function Page() {
                                     );
                                 })}
                             </div>
+                            {/* <div className={styles.projects_container}>
+                                {["stockml", "prolol", "plantz"].map(
+                                    (project, index) => {
+                                        return (
+                                            <Link
+                                                href={`/${project}`}
+                                                key={index}
+                                                style={{
+                                                    display: "flex",
+                                                    flexDirection: "row",
+                                                    height: "20%",
+                                                    alignItems: "center",
+                                                }}
+                                            >
+                                                <div
+                                                    style={{
+                                                        borderTop:
+                                                            index == 0
+                                                                ? "none"
+                                                                : "1px solid #bbb",
+                                                        height: "100%",
+                                                        width: "100%",
+                                                    }}
+                                                    className={
+                                                        styles.project_list
+                                                    }
+                                                >
+                                                    {project}
+                                                    <PiArrowRightThin
+                                                        size={24}
+                                                        className={styles.icon}
+                                                    />
+                                                </div>
+                                            </Link>
+                                        );
+                                    }
+                                )}
+                            </div> */}
                         </div>
                     </div>
                 </FadeInElement>

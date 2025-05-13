@@ -12,14 +12,17 @@ body {
 
 :root {
     --color-background: #0d1014;
-    --color-foreground: #1b2024;
+    --color-foreground: #1f2026;
+    --color-foreground2: #2c2c3b;
     --color-text: #f8faff;
-    --color-accent: #bbb;
+    --color-accent: #d0ccdc;
+    --color-highlight: #8989ff;
     --gradient: linear-gradient(
         90deg,
         rgba(27, 32, 36, 1) 0%,
         rgba(37, 31, 57, 1) 100%
     );
+
     --image-overlay: rgba(27, 32, 36, 0.5);
 }
 
@@ -74,6 +77,12 @@ a {
     font-family: "Optician-Sans";
     src: local("Optician-Sans"),
         url(../fonts/Optician-Sans.otf) format("opentype");
+}
+
+@font-face {
+    font-family: "WorkSans-Light";
+    src: local("WorkSans-Light"),
+        url(../fonts/WorkSans-Light.ttf) format("truetype");
 }
 
 @font-face {
