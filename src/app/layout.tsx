@@ -5,6 +5,7 @@ import styles from "@/app/app.module.css";
 import "@/app/globals.css";
 import { useEffect, useState } from "react";
 import { DarkModeContext } from "@/contexts/DarkModeContext";
+import { Head } from "next/document";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     const [darkMode, setDarkMode] = useState<boolean>(true);
@@ -44,6 +45,29 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
     return (
         <html lang="en">
+            <head>
+                <link
+                    rel="preload"
+                    href="/fonts/WorkSans-Light.ttf"
+                    as="font"
+                    type="font/woff2"
+                    crossOrigin="anonymous"
+                />
+                <link
+                    rel="preload"
+                    href="/fonts/WorkSans-Regular.ttf"
+                    as="font"
+                    type="font/ttf"
+                    crossOrigin="anonymous"
+                />
+                <link
+                    rel="preload"
+                    href="/fonts/WorkSans-SemiBold.ttf"
+                    as="font"
+                    type="font/ttf"
+                    crossOrigin="anonymous"
+                />
+            </head>
             <body>
                 <div className={styles.background}>
                     <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>

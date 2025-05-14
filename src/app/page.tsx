@@ -449,10 +449,10 @@ export default function Page() {
                             </div>
                             <div className={styles.chips}>
                                 {[
-                                    "Raspberry Pi",
-                                    "OpenCV",
                                     "Python",
                                     "System Design",
+                                    "OpenCV",
+                                    "Raspberry Pi",
                                 ].map((text, index) => {
                                     return <Chip key={index}>{text}</Chip>;
                                 })}

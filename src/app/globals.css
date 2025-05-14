@@ -76,7 +76,7 @@ a {
 @font-face {
     font-family: "Optician-Sans";
     src: local("Optician-Sans"),
-        url(../fonts/Optician-Sans.otf) format("opentype");
+        url(../fonts/nanika/Optician-Sans.otf) format("opentype");
 }
 
 @font-face {

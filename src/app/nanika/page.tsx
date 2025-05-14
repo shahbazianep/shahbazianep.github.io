@@ -18,15 +18,8 @@ export default function Page() {
                 marginBottom: 16,
             }}
         >
-            <div className={styles.project_page}>
-                <div
-                    style={{
-                        display: "grid",
-                        gap: 24,
-                        gridColumn: "span 2",
-                        gridRow: "span 1",
-                    }}
-                >
+            <div className={styles.nanika}>
+                <div className={styles.details}>
                     <div className={styles.project_description_tile}>
                         <div>
                             <div className={styles.title}>nanika</div>
@@ -81,23 +74,10 @@ export default function Page() {
                                 alignItems: "center",
                             }}
                         >
-                            <div
-                                style={{
-                                    borderRadius: "100%",
-                                    border: "2px solid #FFF",
-                                    width: 64,
-                                    height: 64,
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    marginRight: 32,
-                                }}
-                            >
-                                1
-                            </div>
+                            <div className={styles.circle}>1</div>
                             Goals
                         </div>
-                        <div style={{ fontSize: 20 }}>
+                        <div className={styles.details_description}>
                             Provide journaling, anonymous social interaction,
                             and mood tracking capabilities to improve the mental
                             health of its users through the phenomenon of social
@@ -112,23 +92,10 @@ export default function Page() {
                                 alignItems: "center",
                             }}
                         >
-                            <div
-                                style={{
-                                    borderRadius: "100%",
-                                    border: "2px solid #FFF",
-                                    width: 64,
-                                    height: 64,
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    marginRight: 32,
-                                }}
-                            >
-                                2
-                            </div>
+                            <div className={styles.circle}>2</div>
                             Design
                         </div>
-                        <div style={{ fontSize: 20 }}>
+                        <div className={styles.details_description}>
                             Emphasis placed on soft pastel colors and simple
                             button-based UX to minimize time spent and simplify
                             emotions in order to more effectively enable social
@@ -136,15 +103,7 @@ export default function Page() {
                         </div>
                     </div>
                 </div>
-                <div
-                    style={{
-                        display: "grid",
-                        gap: 24,
-                        gridColumn: "3",
-                        gridRow: "span 2",
-                        gridTemplateRows: "auto 1fr 1fr",
-                    }}
-                >
+                <div className={styles.design}>
                     <div className={styles.project_image}>
                         <Image
                             src="/images/me.jpg"
@@ -194,16 +153,7 @@ export default function Page() {
                         />
                     </div>
                 </div>
-                <div
-                    style={{
-                        display: "grid",
-                        gridTemplateColumns: "3fr 5fr",
-                        gridTemplateRows: "3fr 2fr",
-                        gap: 24,
-                        gridColumn: "span 2",
-                        gridRow: "span 1",
-                    }}
-                >
+                <div className={styles.demo}>
                     <div
                         className={styles.project_tile_video_mobile}
                         style={{
@@ -238,15 +188,7 @@ export default function Page() {
                             priority
                         />
                     </div>
-                    <div
-                        className={styles.project_details_tile}
-                        style={{
-                            justifyContent: "center",
-                            fontSize: 24,
-                            gridColumn: 2,
-                            gridRow: 2,
-                        }}
-                    >
+                    <div className={styles.project_details_tile}>
                         a gentle reminder that no matter what you feel, you are
                         not alone
                     </div>
