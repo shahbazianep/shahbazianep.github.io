@@ -5,7 +5,6 @@ import styles from "@/app/app.module.css";
 import "@/app/globals.css";
 import { useEffect, useState } from "react";
 import { DarkModeContext } from "@/contexts/DarkModeContext";
-import { Head } from "next/document";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     const [darkMode, setDarkMode] = useState<boolean>(true);
